@@ -48,14 +48,14 @@ export default function Hero() {
           <div className="relative  lg:flex justify-end">
             <div className="absolute z-50 h-[540px] w-[450px] bg-[#00bf63] rounded-xl -top-12 right-0"></div>
            <div className="relative w-[420px] h-[540px] z-50 overflow-hidden">
-  <Image
-    src="/assets/partymember.png"
-    alt="Leader"
-    fill
-    priority
-    className="object-cover"
-  />
-</div>
+            <Image
+              src="/assets/partymember.png"
+              alt="Leader"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
 
 
           </div>
