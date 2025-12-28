@@ -46,9 +46,6 @@ export default function Navbar() {
                             height={80}
                             className="h-[110px] w-[180px] object-contain"
                         />
-                        {/* <span className="text-sm font-semibold leading-tight">
-            जनादेश पार्टी नेपाल
-          </span> */}
                     </div>
                     <div className="flex flex-col">
                         <div className="flex items-center justify-between  py-2 text-sm text-gray-600">

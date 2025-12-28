@@ -47,18 +47,17 @@ export default function Hero() {
           {/* RIGHT IMAGE CARD */}
           <div className="relative  lg:flex justify-end">
             <div className="absolute z-50 h-[540px] w-[450px] bg-[#00bf63] rounded-xl -top-12 right-0"></div>
-            <div className="relative h-[540px] w-[420px] z-50  overflow-hidden ">
-             <div className="relative w-full h-[320px]">
+           <div className="relative w-[420px] h-[540px] z-50 overflow-hidden">
   <Image
     src="/assets/partymember.png"
     alt="Leader"
     fill
-    className="object-cover"
     priority
+    className="object-cover"
   />
 </div>
 
-            </div>
+
           </div>
         </div>
       </div>
