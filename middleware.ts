@@ -7,10 +7,10 @@ export default createMiddleware({
 
 export const config = {
   matcher: [
-    // Match all routes EXCEPT:
+    // Match all paths except:
     // - next internals
     // - api routes
-    // - static files (images, fonts, etc.)
-    "/((?!api|_next|assets|fonts|favicon.ico|.*\\.(png|jpg|jpeg|webp|svg|ico)).*)",
+    // - static files in public
+    "/((?!api|_next|assets|fonts|favicon.ico).*)",
   ],
 };
