@@ -1,0 +1,100 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "coreValues": "Core Values",
+    "manifesto": "Manifesto",
+    "policies": "Policies",
+    "leadership": "Leadership",
+    "join": "Join",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Janadesh Party",
+    "subtitle": "Building a transparent, digital, and prosperous Nepal through youth leadership and sustainable policies."
+  },
+  "core-values": {
+    "title": "Our Core Values",
+    "subtitle": "At Janadesh Party, our core values are the foundation of everything we do. We believe in transparency, inclusivity, and community-driven progress. Our commitment to these principles guides our actions and decisions as we work towards a better future for all."
+  },
+  "manifesto": {
+    "title": "Manifesto",
+    "subtitle": "A Vision for a Digital and Prosperous Nepal"
+  },
+  "leadership": {
+    "title": "Leadership",
+    "subtitle": "Meet the Visionaries Driving Change"
+  },
+  "missionVision": {
+    "missionTitle": "Our Mission",
+    "missionText": "To empower every Nepali citizen through digital governance, ensuring transparency, accountability, and equal opportunities for all. We strive to build a nation where technology bridges the gap between the government and the people.",
+
+    "visionTitle": "Our Vision",
+    "visionText": "A prosperous Nepal where youth leadership drives innovation, green economy sustains our future, and inclusive policies ensure no one is left behind. We envision a Nepal that stands tall on the global stage."
+  },
+  
+  "journey": {
+    "heading": "Our Journey",
+    "subheading": "From a student movement to a national force.",
+    "events": [
+      {
+        "year": "2075",
+        "title": "The Beginning",
+        "description": "Started as a youth movement in universities."
+      },
+      {
+        "year": "2077",
+        "title": "First Convention",
+        "description": "Officially registered as a political party."
+      },
+      {
+        "year": "2079",
+        "title": "National Presence",
+        "description": "Expanded committees to all 7 provinces."
+      }
+    ]
+  }
+,
+  "values": {
+    "heading": "Our Core Values",
+    "subheading": "The principles that guide Janadesh Party",
+
+    "why": "Why it matters",
+
+    "transparency": {
+      "title": "Transparency (पारदर्शिता)",
+      "description": "We believe in open governance where every decision, budget allocation, and process is visible to the public. Digital tools ensure real-time accountability.",
+      "why": "Without transparency, we cannot achieve true democracy and development in the 21st century."
+    },
+
+    "green": {
+      "title": "Green Economy (हरित अर्थतन्त्र)",
+      "description": "Transitioning Nepal towards sustainable development through renewable energy, eco-tourism, and organic agriculture.",
+      "why": "Without green growth, sustainable democracy is impossible."
+    },
+
+    "infrastructure": {
+      "title": "Infrastructure (पूर्वाधार)",
+      "description": "Building smart cities and connecting rural Nepal with high-speed internet and reliable transportation networks.",
+      "why": "Without infrastructure, national development cannot move forward."
+    },
+
+    "inclusivity": {
+      "title": "Inclusivity (समावेशी समाज)",
+      "description": "A party for everyone. We champion the rights of minorities, women, and marginalized communities.",
+      "why": "Without inclusivity, democracy remains incomplete."
+    },
+
+    "digital": {
+      "title": "Digital Governance (डिजिटल सुशासन)",
+      "description": "Eliminating bureaucracy through technology, smart IDs, online services, and blockchain-based records.",
+      "why": "Without digital governance, modern democracy cannot function."
+    }
+  }
+
+
+
+
+
+}
