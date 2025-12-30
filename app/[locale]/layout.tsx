@@ -1,13 +1,11 @@
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "./components/Navbar";
-import { Roboto } from "next/font/google";
 import Footer from "./components/footer";
-
-// ✅ Roboto font configuration
-const roboto = Roboto({
+import { Roboto } from "next/font/google";
+export const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
-  variable: "--font-roboto",
+  display: "swap",
 });
 
 export default async function LocaleLayout({
@@ -17,19 +15,15 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // ✅ Load translations
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale}>
-      <body className={roboto.className}>
+    <html lang={locale} className={roboto.className}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* ✅ Navbar always visible */}
           <Navbar />
-
-          {/* ✅ Page content */}
           <main>{children}</main>
-          <Footer/>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -54,7 +54,7 @@ export default function PartyLeadershipCards() {
     <div className="pb-20 bg-white ">
       <div className="">
         {/* Header */}
-        <h1 className="text-5xl justify-center text-center  font-bold text-green-600 mb-12">
+        <h1 className="text-4xl justify-center text-center  font-bold text-green-600 mb-12">
           जनादेश पार्टीको नेतृत्व
         </h1>
       <Container>

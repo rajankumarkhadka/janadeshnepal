@@ -5,8 +5,8 @@ export default function NewsUpdates() {
     return (
         <Container className="py-20">
             {/* Header */}
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-blue-600 font-semibold text-3xl">
+            <div className="flex justify-between items-center mb-12">
+                <h2 className="text-blue-600 font-bold text-4xl">
                     News & Updates
                 </h2>
                 <button className="text-gray-400 text-sm hover:text-gray-600">
@@ -28,7 +28,7 @@ export default function NewsUpdates() {
 
                     {/* Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 bg-blue-600/90 p-4">
-                        <h3 className="text-white font-semibold text-base mb-1">
+                        <h3 className="text-white font-bold text-lg mb-1">
                             डिजिटल परिवर्तन र जागरूकता आधारित...
                         </h3>
                         <p className="text-white text-xs">
@@ -54,13 +54,13 @@ export default function NewsUpdates() {
 
                             {/* Text */}
                             <div>
-                                <h4 className="text-green-600 font-medium text-base mb-1">
+                                <h4 className="text-green-600 font-semibold text-base mb-1">
                                     डिजिटल परिवर्तन र जागरूकता आधारित...
                                 </h4>
                                 <p className="text-gray-400 text-xs mb-1">
                                     Mangsir 14, 2060
                                 </p>
-                                <p className="text-gray-500 text-sm leading-snug">
+                                <p className="text-gray-500 text-sm font-semibold leading-snug">
                                     जनताले पाएको सेवाको मूल स्वरूप भनेको जनताको विश्वास जित्ने,
                                     नयाँ राजनीतिक संस्कार स्थापित गर्ने र जनअनुसार राज्य सञ्चालन गर्न
                                     सक्षम नेतृत्व तयार गर्नु हो।

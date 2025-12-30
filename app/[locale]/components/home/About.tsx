@@ -33,7 +33,7 @@ export default function AboutMovement() {
       <div className="">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600  py-2">
+          <h1 className="text-4xl font-bold text-blue-600  py-2">
             About Movement
           </h1>
           <button className="text-gray-400 hover:text-gray-600 font-medium">

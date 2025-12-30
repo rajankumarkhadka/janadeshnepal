@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6bfc91b9-d27d-4d07-bfe7-4114cd73ca79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/about/Manifesto.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/about/PoliticalParty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/about/PoliticalParty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/home/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/home/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/home/JoinMovementNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/home/JoinMovementNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/home/party.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/home/party.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/layout/PageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/layout/PageHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/components/leadership/Leadership.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/leadership/Leadership.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[locale]/manifesto/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/manifesto/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/leadership.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/leadership.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/components/news/FeaturedNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/news/FeaturedNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/components/news/NewsGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/components/news/NewsGrid.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +72,7 @@
       <workItem from="1766913197948" duration="1461000" />
       <workItem from="1767017488242" duration="2928000" />
       <workItem from="1767069380862" duration="2000" />
+      <workItem from="1767097722687" duration="1433000" />
     </task>
     <servers />
   </component>

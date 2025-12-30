@@ -56,7 +56,7 @@ export default function JoinMovementNews() {
            
 
             <div className="">
-              <h2 className="text-3xl font-bold text-[#1baa5a] mb-8">Join The Movement</h2>
+              <h2 className="text-4xl font-bold text-[#1baa5a] mb-12">Join The Movement</h2>
 
               <div className="space-y-4">
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">

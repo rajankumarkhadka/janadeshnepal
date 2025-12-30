@@ -37,7 +37,7 @@ const cleanPathname = pathname.replace(`/${locale}`, '') || '/';
             
 
                 {/* 🔹 MAIN NAV */}
-                <div className="flex items-center justify-between  py-4">
+                <div className="flex items-center justify-between py-3">
                     {/* Logo */}
                     <div className="flex items-center gap-3">
                         <Image
@@ -45,7 +45,7 @@ const cleanPathname = pathname.replace(`/${locale}`, '') || '/';
                             alt="Janadesh Party Nepal"
                             width={80}
                             height={80}
-                            className="h-[110px] w-[180px] object-contain"
+                            className="h-[110px] w-[145px] object-cover"
                         />
                     </div>
                     <div className="flex flex-col gap-2">

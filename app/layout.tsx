@@ -1,5 +1,5 @@
 import './globals.css';
-import { Roboto, Noto_Sans_Devanagari } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
 export const metadata = {
   title: 'Janadesh Party Nepal',
@@ -12,11 +12,7 @@ const roboto = Roboto({
   variable: '--font-roboto'
 });
 
-const nepali = Noto_Sans_Devanagari({
-  subsets: ['devanagari'],
-  weight: ['400', '500', '500', '700'],
-  variable: '--font-nepali'
-});
+
 
 export default function RootLayout({
   children
@@ -25,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="{`${roboto.variable} ${nepali.variable}`}  ">
+      <body className={`${roboto.variable} `}>
         {children}
       </body>
     </html>
