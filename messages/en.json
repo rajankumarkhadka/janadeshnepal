@@ -54,7 +54,14 @@
       "agriculture": "Agriculture"
     }
   },
-
+"register":{
+  "title":"Register",
+  "subtitle":"Join our movement and be part of the change"
+},
+"news":{
+  "title":"News & Updates",
+  "subtitle":"Stay informed with the latest news from Janadesh Party"
+},
   "leadership": {
     "title": "Leadership",
     "subtitle": "Meet the Visionaries Driving Change"

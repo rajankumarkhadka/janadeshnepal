@@ -17,6 +17,7 @@ export default function Navbar() {
     const locale = useLocale();
     const t = useTranslations('navbar');
     const pathname = usePathname();
+const cleanPathname = pathname.replace(`/${locale}`, '') || '/';
 
     const links = [
         { href: '/', key: 'home' },
@@ -40,15 +41,15 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="flex items-center gap-3">
                         <Image
-                            src="/assets/logo.png"
+                            src="/assets/logo_janadesh.png"
                             alt="Janadesh Party Nepal"
                             width={80}
                             height={80}
                             className="h-[110px] w-[180px] object-contain"
                         />
                     </div>
-                    <div className="flex flex-col">
-                        <div className="flex items-center justify-between  py-2 text-sm text-gray-600">
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center justify-between py-2 text-sm text-gray-600">
                             <span>info@janadeshnepal.org</span>
 
                             <div className="flex items-center gap-4">
@@ -60,33 +61,34 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        <span className='bg-gray-300 h-[1.3px] rounded' ></span>
+                        <span className='bg-gray-300 h-[1.3px] rounded ' ></span>
                         {/* Links */}
-                          <nav
-              className={`flex gap-6 font-bold transition-all
-                ${locale === 'np'
-                  ? 'text-[18px] leading-relaxed'
-                  : 'text-base'
-                }
-              `}
-            >
-              {links.map(({ href, key }) => (
-                <Link
-                  key={key}
-                  href={href}
-                  locale={locale}
-                  className={`transition hover:text-green-600
-                    ${
-                      pathname === href
-                        ? 'text-green-600 border-b-2 border-green-600 pb-1'
-                        : 'text-gray-600'
-                    }
-                  `}
-                >
-                  {t(key)}
-                </Link>
-              ))}
-            </nav>
+                <nav
+  className={`flex gap-6 font-bold transition duration-1000 pb-2
+    ${locale === 'np'
+      ? 'text-[18px] leading-relaxed'
+      : 'text-base leading-normal'
+    }
+  `}
+>
+  {links.map(({ href, key }) => (
+    <Link
+      key={key}
+      href={href}
+      locale={locale}
+      className={`transition hover:text-green-600
+        ${
+          cleanPathname === href
+            ? 'text-green-600  pb-2 '
+            : 'text-gray-600'
+        }
+      `}
+    >
+      {t(key)}
+    </Link>
+  ))}
+</nav>
+
                     </div>
 
                 </div>

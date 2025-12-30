@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, User, FileText, Upload, CheckCircle } from 'lucide-react';
+import PageHeader from '../components/layout/PageHeader';
+import { useTranslations } from 'next-intl';
 
 // Membership Application Form with Steps
 const MembershipFormBasic = () => {
@@ -64,9 +66,20 @@ const MembershipFormBasic = () => {
   const handleSubmit = () => {
     console.log('Form submitted:', formData);
     alert('आवेदन सफलतापूर्वक पेश गरियो!');
+
   };
+    const t = useTranslations('register');
+  
 
   return (
+    <>
+    <div className="">
+      <PageHeader
+              title={t('title')}
+              subtitle={t('subtitle')}
+            />
+            
+    </div>
     <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-600 py-12 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
@@ -471,6 +484,7 @@ const MembershipFormBasic = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

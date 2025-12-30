@@ -19,10 +19,10 @@ export default function AboutMovement() {
               <Image
                 src={item.icon}
                 alt={item.title}
-                width={48}
-                height={48}
+                width={54}
+                height={54}
               />
-              <p className="mt-4 text-base font-medium text-blue-600 text-center">
+              <p className="mt-4 text-base font-semibold text-blue-600 text-center">
                 {item.title}
               </p>
             </div>
@@ -121,23 +121,23 @@ export default function AboutMovement() {
 const icons = [
   {
     title: 'पारदर्शी शासन',
-    icon: '/assets/icons/transparency.svg'
+    icon: '/assets/janadesh-icons/eye.svg'
   },
   {
     title: 'उत्पाद, दिगो अर्थतन्त्र',
-    icon: '/assets/icons/economy.svg'
+    icon: '/assets/janadesh-icons/plant.svg'
   },
   {
     title: 'वातावरण/पूर्वाधार',
-    icon: '/assets/icons/infrastructure.svg'
+    icon: '/assets/janadesh-icons/building.svg'
   },
   {
     title: 'समावेशी समाज',
-    icon: '/assets/icons/inclusive.svg'
+    icon: '/assets/janadesh-icons/hand.svg'
   },
   {
     title: 'डिजिटल सुशासन',
-    icon: '/assets/icons/digital.svg'
+    icon: '/assets/janadesh-icons/digital.svg'
   }
 ];
 const timelineData = [

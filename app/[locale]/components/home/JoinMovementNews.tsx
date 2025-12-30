@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Container from '../layout/Container';
+import Image from 'next/image';
 
 export default function JoinMovementNews() {
   const [formData, setFormData] = useState({
@@ -50,39 +51,15 @@ export default function JoinMovementNews() {
         <Container>
 
           {/* Join The Movement Section */}
-          <div className="bg-[#c8f7dc] py-16  relative overflow-hidden">
+          <div className="bg-[#c8f7dc] py-16   relative overflow-hidden">
             {/* Decorative Birds */}
-            <div className="absolute top-8 right-20">
-              <svg width="30" height="30" viewBox="0 0 30 30" className="text-blue-400 opacity-60">
-                <path d="M8,15 Q12,10 16,15 Q20,10 24,15" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </div>
-            <div className="absolute top-12 right-32">
-              <svg width="25" height="25" viewBox="0 0 25 25" className="text-blue-500 opacity-50">
-                <path d="M6,12 Q10,8 14,12 Q18,8 22,12" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </div>
-            <div className="absolute top-20 right-48">
-              <svg width="35" height="35" viewBox="0 0 35 35" className="text-blue-600 opacity-40">
-                <path d="M8,17 Q14,12 20,17 Q26,12 32,17" stroke="currentColor" strokeWidth="2.5" fill="none" />
-              </svg>
-            </div>
-            <div className="absolute top-16 right-64">
-              <svg width="28" height="28" viewBox="0 0 28 28" className="text-blue-500 opacity-45">
-                <path d="M7,14 Q11,10 15,14 Q19,10 23,14" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
-            </div>
-            <div className="absolute top-24 right-80">
-              <svg width="32" height="32" viewBox="0 0 32 32" className="text-blue-700 opacity-50">
-                <path d="M8,16 Q13,11 18,16 Q23,11 28,16" stroke="currentColor" strokeWidth="2.5" fill="none" />
-              </svg>
-            </div>
+           
 
             <div className="">
               <h2 className="text-3xl font-bold text-[#1baa5a] mb-8">Join The Movement</h2>
 
               <div className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-4">
 
                     {/* Inputs */}
@@ -190,7 +167,19 @@ className="relative h-[50px] w-40 rounded-3xl overflow-hidden border border-gree
                     </button>
 
                   </div>
+                  <div className="absolute justify-right -top-36  right-0 hidden md:block ">
+                    <div className="relative">
+                    <Image
+                      src="/assets/birds.png"
+                      alt="Join the Movement Illustration"
+                      width={500}
+                      height={200}
+                    />
+                  </div>
+                  </div>
+                  
                 </div>
+
               </div>
             </div>
           </div>

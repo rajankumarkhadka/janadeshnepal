@@ -37,7 +37,7 @@ export default function Footer() {
           {/* LOGO */}
           <div className="md:col-span-3 relative h-[200px]">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo_janadesh.png"
               alt="Janadesh Party Logo"
               fill
               className="object-contain"
