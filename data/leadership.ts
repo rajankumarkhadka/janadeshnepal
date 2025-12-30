@@ -3,7 +3,7 @@ export const leadership = [
     id: 'leader-1',
     name: {
       np: 'नेतृत्व सदस्य १',
-      en: 'Leadership Member 1'
+      en: 'राजन कुमार खड्का'
     },
     position: {
       np: 'सभापति',
@@ -17,7 +17,7 @@ export const leadership = [
     id: 'leader-2',
     name: {
       np: 'नेतृत्व सदस्य २',
-      en: 'Leadership Member 2'
+      en: ' कुमार खड्का'
     },
     position: {
       np: 'उपसभापति',
@@ -31,7 +31,7 @@ export const leadership = [
     id: 'leader-3',
     name: {
       np: 'नेतृत्व सदस्य ३',
-      en: 'Leadership Member 3'
+      en: ' राजन कुमार  '
     },
     position: {
       np: 'महामन्त्री',
@@ -45,7 +45,7 @@ export const leadership = [
     id: 'leader-4',
     name: {
       np: 'नेतृत्व सदस्य ४',
-      en: 'Leadership Member 4'
+      en: ' नेतृत्व कुमार खड्का '
     },
     position: {
       np: 'कोषाध्यक्ष',

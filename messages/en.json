@@ -10,6 +10,21 @@
     "news": "News",
     "contact": "Contact"
   },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "coreValues": "Core Values",
+    "manifesto": "Manifesto",
+    "policies": "Policies",
+    "leadership": "Leadership",
+    "join": "Join",
+    "news": "News",
+    "contact": "Contact",
+    "donate": "Donate",
+    "connect": "Connect with us",
+    "allRightsReserved": "All rights reserved."
+  },
   "about": {
     "title": "About Janadesh Party",
     "subtitle": "Building a transparent, digital, and prosperous Nepal through youth leadership and sustainable policies."
@@ -20,8 +35,26 @@
   },
   "manifesto": {
     "title": "Manifesto",
-    "subtitle": "A Vision for a Digital and Prosperous Nepal"
+    "subtitle": "A Vision for a Digital and Prosperous Nepal",
+  "downloadManifesto": "Download Manifesto"
   },
+   "policies": {
+    "title": "Policies",
+    "subtitle": "Our vision and commitments for a stronger Nepal",
+    "ourPolicies": "Our Policies",
+    "search": "Search policies...",
+    "readMore": "Read full policy",
+    "categories": {
+      "all": "All",
+      "technology": "Technology",
+      "environment": "Environment",
+      "economy": "Economy",
+      "health": "Health",
+      "education": "Education",
+      "agriculture": "Agriculture"
+    }
+  },
+
   "leadership": {
     "title": "Leadership",
     "subtitle": "Meet the Visionaries Driving Change"

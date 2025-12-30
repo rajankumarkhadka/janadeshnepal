@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "./components/Navbar";
 import { Roboto } from "next/font/google";
+import Footer from "./components/footer";
 
 // ✅ Roboto font configuration
 const roboto = Roboto({
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
 
           {/* ✅ Page content */}
           <main>{children}</main>
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

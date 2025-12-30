@@ -4,7 +4,7 @@ import Container from '../layout/Container';
 export default function Hero() {
   return (
     <>
-    <section className='bg-[#fafafa] pt-12'></section>
+    <section className='bg-[#fafafa]  pt-[191px]'></section>
 
     <section className="relative w-full bg-[#fafafa]">
 
@@ -24,23 +24,50 @@ export default function Hero() {
           
           {/* LEFT CONTENT */}
           <div className="text-white py-20">
-            <h1 className="text-3xl lg:text-4xl font-semibold leading-tight mb-4">
+            <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-4">
               Gen-Z नेतृत्वमा उत्तरदायी शासन
             </h1>
 
-            <p className="text-sm lg:text-base text-blue-100 mb-6 max-w-md">
+            <p className="text-sm lg:text-2xl font-semibold text-blue-100 mb-6 max-w-md">
               डिजिटल पारदर्शिता र जनमुखी शासनको अभियान
             </p>
 
             <div className="flex items-center gap-4">
-              <button className="rounded-full bg-green-500 px-6 py-2 text-sm font-medium text-white hover:bg-green-600 transition">
-                Join Now
-              </button>
+              <button
+  className="relative h-[50px] w-40 overflow-hidden rounded-full
+    border border-green-400 bg-green-600 text-white
+    shadow-2xl transition-all
 
-              <button className="flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white hover:bg-white/10 transition">
-                Download Manifesto
-                <span className="text-xs">⬇</span>
-              </button>
+    before:absolute before:inset-x-0 before:top-0 before:h-0 before:bg-green-700
+    before:duration-500 before:z-0
+
+    after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:bg-green-700
+    after:duration-500 after:z-0
+
+    hover:before:h-2/4 hover:after:h-2/4"
+>
+  <span className="relative z-10">Join Now</span>
+</button>
+
+                <button
+  className="relative h-[50px] px-4 overflow-hidden rounded-full
+    border border-white/60 bg-transparent text-white
+    shadow-2xl transition-all
+
+    before:absolute before:inset-x-0 before:top-0 before:h-0 before:bg-white/30
+    before:duration-500 before:z-0
+
+    after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:bg-white/30
+    after:duration-500 after:z-0
+
+    hover:before:h-2/4 hover:after:h-2/4"
+>
+  <span className="relative z-10 flex items-center gap-2">
+    Download Manifesto
+    <span className="text-xs">⬇</span>
+  </span>
+</button>
+
             </div>
           </div>
 

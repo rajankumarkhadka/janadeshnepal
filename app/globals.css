@@ -27,3 +27,15 @@ body {
     text-wrap: balance;
   }
 }
+@keyframes hologram {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-hologram {
+  animation: hologram 4s linear infinite;
+}

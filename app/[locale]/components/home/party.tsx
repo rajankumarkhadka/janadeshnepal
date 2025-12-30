@@ -1,9 +1,10 @@
 'use client';
-
+import { useLocale } from 'next-intl'
 import { useState } from 'react';
 import Container from '../layout/Container';
-
+import { Profiles } from '@/data/profile';
 export default function PartyLeadershipCards() {
+      const locale = useLocale() as 'en' | 'np';
   const cardsData = [
     {
       id: 1,
@@ -51,43 +52,76 @@ export default function PartyLeadershipCards() {
 
   return (
     <div className="pb-20 bg-white ">
-      <Container>
       <div className="">
         {/* Header */}
-        <h1 className="text-3xl font-bold text-green-600 mb-12">
+        <h1 className="text-5xl justify-center text-center  font-bold text-green-600 mb-12">
           जनादेश पार्टीको नेतृत्व
         </h1>
+      <Container>
 
         {/* Landscape Images Row */}
-        <div className="mb-16 overflow-x-auto scrollbar-hide">
-          <style jsx>{`
-            .scrollbar-hide::-webkit-scrollbar {
-              display: none;
-            }
-            .scrollbar-hide {
-              -ms-overflow-style: none;
-              scrollbar-width: none;
-            }
-          `}</style>
-          <div className="flex gap-6 pb-4">
-            {cardsData.map((card) => (
-              <div
-                key={`image-${card.id}`}
-                className="w-52 h-60 flex-shrink-0 rounded-lg overflow-hidden shadow-md"
-              >
-                <img 
-                  src={card.image} 
-                  alt={card.title}
-                  className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+ <div className="flex gap-6 pb-4">
+  {Profiles.map((profile) => (
+    <div
+      key={profile.id}
+      className="
+        relative h-[400px] w-[300px] overflow-hidden rounded-xl
+        bg-white/10 backdrop-blur-md
+        border border-white/30
+        shadow-lg
+      "
+    >
+      {/* IMAGE */}
+      <img
+        src={profile.image}
+        alt={profile.name[locale]}
+        className="h-full w-full object-cover"
+      />
+
+      {/* 🔹 HOLOGRAM LAYER (CARD ONLY) */}
+      <div
+        className="
+          pointer-events-none
+          absolute inset-0
+          bg-[linear-gradient(120deg,
+            transparent 0%,
+            rgba(255,255,255,0.25) 50%,
+            transparent 100%)]
+          opacity-40
+          animate-hologram
+        "
+      />
+
+      {/* TEXT */}
+      <div
+        className="
+          absolute bottom-0 z-20 px-4 py-4 text-white
+          bg-gradient-to-t from-black/70 via-black/30 to-transparent
+        "
+      >
+        <p className="text-sm font-medium">
+          {profile.position[locale]}
+        </p>
+
+        <h2
+          className={`font-bold ${
+            locale === 'np' ? 'text-lg' : 'text-base'
+          }`}
+        >
+          {profile.name[locale]}
+        </h2>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+
+
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-          {cardsData.slice(0, 3).map((card, index) => (
+          {cardsData.slice( ).map((card, index) => (
             <div
               key={card.id}
               className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
@@ -102,8 +136,9 @@ export default function PartyLeadershipCards() {
           ))}
 
         </div>
-      </div>
       </Container>
+
+      </div>
     </div>
   );
 }

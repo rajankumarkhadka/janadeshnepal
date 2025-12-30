@@ -13,12 +13,12 @@ export default function LeadershipPage() {
       <Container>
 
         {/* PAGE TITLE */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-sky-600 mb-14">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-sky-600 mb-14">
           {locale === 'np' ? 'हाम्रो केन्द्रीय समिति' : 'Our Central Committee'}
         </h1>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {leadership.map((leader) => (
             <div
               key={leader.id}
@@ -35,30 +35,17 @@ export default function LeadershipPage() {
               </div>
 
               {/* CONTENT */}
-              <div className="p-5 text-center">
-                <h3 
-  className="text-lg font-bold text-sky-600 transition-all duration-300 cursor-pointer"
-  style={{
-    filter: 'none'
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.filter = 'drop-shadow(0 0 25px rgba(2,132,199,1)) drop-shadow(0 0 15px rgba(2,132,199,0.8))';
-    e.currentTarget.style.color = 'rgb(3 105 161)'; // sky-700
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.filter = 'none';
-    e.currentTarget.style.color = 'rgb(2 132 199)'; // sky-600
-  }}
->
-  {leader.name[locale]}
-</h3>
+              <div className="text-center">
+ 
+  <div className="before:ease relative py-3 overflow-hidden border-b border-gray-200 text-blue-500  transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-blue-500 before:duration-700 hover:text-white hover:shadow-blue-500 hover:before:h-64 hover:before:-translate-y-32">
+      <span className="relative z-10">{leader.name[locale]}</span>
+    </div>
 
-
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm font-semibold text-gray-600 mt-2">
                   {leader.position[locale]}
                 </p>
 
-                <div className="mt-4 text-sm text-gray-700">
+                <div className="py-3 font-semibold text-sm text-gray-700">
                   {leader.phone}
                 </div>
               </div>

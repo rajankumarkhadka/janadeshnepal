@@ -31,7 +31,7 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="w-full bg-[#fafafa] ">
+        <header className="w-full bg-[#fafafa] fixed top-0 left-0 z-50 shadow">
             <Container>
             
 
@@ -62,20 +62,31 @@ export default function Navbar() {
 
                         <span className='bg-gray-300 h-[1.3px] rounded' ></span>
                         {/* Links */}
-                        <nav className="flex gap-7 text-base font-medium text-gray-600">
-                            {links.map(({ href, key }) => (
-                                <Link
-                                    key={key}
-                                    href={href}
-                                    className={`transition hover:text-green-600 ${pathname === href
-                                            ? 'text-green-600 border-b-2 border-green-600 pb-1'
-                                            : ''
-                                        }`}
-                                >
-                                    {t(key)}
-                                </Link>
-                            ))}
-                        </nav>
+                          <nav
+              className={`flex gap-6 font-bold transition-all
+                ${locale === 'np'
+                  ? 'text-[18px] leading-relaxed'
+                  : 'text-base'
+                }
+              `}
+            >
+              {links.map(({ href, key }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  locale={locale}
+                  className={`transition hover:text-green-600
+                    ${
+                      pathname === href
+                        ? 'text-green-600 border-b-2 border-green-600 pb-1'
+                        : 'text-gray-600'
+                    }
+                  `}
+                >
+                  {t(key)}
+                </Link>
+              ))}
+            </nav>
                     </div>
 
                 </div>
