@@ -9,7 +9,7 @@ export default function ContactSection() {
         
         {/* LEFT SIDE */}
         <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-[#2772b0] mb-6">
+          <h2 className="text-2xl font-semibold text-[#2772b0] mb-6">
             Contact Information
           </h2>
 
@@ -59,7 +59,7 @@ export default function ContactSection() {
 
         {/* RIGHT SIDE – FORM */}
         <div className=" rounded-3xl p-8 shadow-sm bg- bg-gray-200">
-          <h2 className="text-3xl font-bold text-[#2772b0] mb-6">
+          <h2 className="text-2xl font-semibold text-[#2772b0] mb-6">
             Send us a Message
           </h2>
 

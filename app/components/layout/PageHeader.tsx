@@ -14,12 +14,12 @@ export default function PageHeader({
   return (
     <section className="bg-[#2673b0] py-16 text-center text-white  md:pt-[220px]">
       <Container>
-        <h1 className="text-2xl md:text-4xl font-bold mb-4">
+        <h1 className="text-2xl md:text-3xl font-semibold mb-2">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="text-lg font-bold opacity-90 mb-6">
+          <p className="text-lg font-normal opacity-90 mb-6">
             {subtitle}
           </p>
         )}

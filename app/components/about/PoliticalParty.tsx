@@ -5,16 +5,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useLocale } from "next-intl";
 import { timelineData } from "@/data/timeline";
+import Container from "../layout/Container";
 
 export default function Timeline() {
   const locale = useLocale() as "en" | "np";
 
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-28">
+    <Container>
+    <section className="relative  py-12">
       {/* CENTER LINE */}
       <div className="absolute left-1/2 top-0 h-full w-[2px] bg-gray-200 hidden lg:block" />
 
-      <div className="space-y-32">
+      <div className="space-y-24">
         {timelineData.map((item, index) => (
           <TimelineItem
             key={index}
@@ -25,8 +27,10 @@ export default function Timeline() {
         ))}
       </div>
     </section>
+    </Container>
   );
 }
+
 
 function TimelineItem({ item, reverse, locale }: any) {
   const ref = useRef(null);
@@ -65,14 +69,14 @@ function TimelineItem({ item, reverse, locale }: any) {
       </motion.div>
 
       {/* TEXT */}
-      <div className="bg-white rounded-3xl shadow-xl p-8 max-w-[500px] mt-8 lg:mt-0 lg:mx-8">
+      <div className="bg-white rounded-3xl shadow-xl p-8 max-w-[500px] mt-8 lg:mt-0 ">
         <span className="text-gray-400 text-sm">{item.year}</span>
 
-        <h3 className="text-3xl text-[#2772b0] font-bold mt-2">
+        <h3 className="text-xl text-[#2772b0] font-semibold mt-2">
           {item.title[locale]}
         </h3>
 
-        <p className="text-gray-600 text-base font-medium mt-2 leading-relaxed">
+        <p className="text-gray-600 text-base font-normal mt-2 leading-relaxed">
           {item.description[locale]}
         </p>
       </div>

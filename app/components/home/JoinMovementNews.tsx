@@ -48,17 +48,11 @@ export default function JoinMovementNews() {
   return (
     <>
       <div className=" bg-[#c8f7dc] ">
-        <Container>
-
-          {/* Join The Movement Section */}
-          <div className="bg-[#c8f7dc] py-16   relative overflow-hidden">
-            {/* Decorative Birds */}
-           
-
+        <Container className='relative'>
+          <div className="bg-[#c8f7dc] py-12   relative overflow-hidden">
             <div className="">
-              <h2 className="text-4xl font-bold text-[#1baa5a] mb-12">Join The Movement</h2>
-
-              <div className="space-y-4">
+              <h2 className="text-3xl font-semibold text-[#1baa5a] mb-10">Join The Movement</h2>
+              <div className="space-y-4 ">
                 <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-4">
 
@@ -66,21 +60,21 @@ export default function JoinMovementNews() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                       <input
-                          type="text"
-                          placeholder="Full Name"
-                          value={formData.fullName}
-                          onChange={(e) =>
-                              setFormData({...formData, fullName: e.target.value})
-                          }
-                          className={inputClass}
+                        type="text"
+                        placeholder="Full Name"
+                        value={formData.fullName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, fullName: e.target.value })
+                        }
+                        className={inputClass}
                       />
 
                       <select
-                          value={formData.province}
-                          onChange={(e) =>
-                              setFormData({...formData, province: e.target.value})
-                          }
-                          className={inputClass}
+                        value={formData.province}
+                        onChange={(e) =>
+                          setFormData({ ...formData, province: e.target.value })
+                        }
+                        className={inputClass}
                       >
                         <option value="">Select Province</option>
                         <option>Koshi</option>
@@ -93,100 +87,98 @@ export default function JoinMovementNews() {
                       </select>
 
                       <input
-                          type="email"
-                          placeholder="Email"
-                          value={formData.email}
-                          onChange={(e) =>
-                              setFormData({...formData, email: e.target.value})
-                          }
-                          className={inputClass}
+                        type="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className={inputClass}
                       />
 
                       <input
-                          type="tel"
-                          placeholder="Phone"
-                          value={formData.phone}
-                          onChange={(e) =>
-                              setFormData({...formData, phone: e.target.value})
-                          }
-                          className={inputClass}
+                        type="tel"
+                        placeholder="Phone"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className={inputClass}
                       />
 
                     </div>
 
                     <div className="flex gap-6">
                       {["Member", "Volunteer", "Donor"].map((type) => (
-                          <label
-                              key={type}
-                              className="flex items-center gap-2 cursor-pointer group"
-                          >
-                            <input
-                                type="radio"
-                                name="memberType"
-                                value={type}
-                                checked={formData.memberType === type}
-                                onChange={(e) =>
-                                    setFormData({...formData, memberType: e.target.value})
-                                }
-                                className="sr-only"
-                            />
+                        <label
+                          key={type}
+                          className="flex items-center gap-2 cursor-pointer group"
+                        >
+                          <input
+                            type="radio"
+                            name="memberType"
+                            value={type}
+                            checked={formData.memberType === type}
+                            onChange={(e) =>
+                              setFormData({ ...formData, memberType: e.target.value })
+                            }
+                            className="sr-only"
+                          />
 
-                            {/* Outer circle */}
-                            <div
-                                className="
+                          {/* Outer circle */}
+                          <div
+                            className="
           w-5 h-5 rounded-full border-2 border-[#22C55E]
           flex items-center justify-center
           transition-colors
           group-hover:bg-green-100
         "
-                            >
-                              {/* Inner dot */}
-                              <div
-                                  className="
+                          >
+                            {/* Inner dot */}
+                            <div
+                              className="
             w-2.5 h-2.5 rounded-full bg-[#22C55E]
             scale-0
             transition-transform
             group-has-[input:checked]:scale-100
           "
-                              />
-                            </div>
+                            />
+                          </div>
 
-                            <span className="text-green-800 font-medium">
+                          <span className="text-green-800 font-medium">
                             {type}
                           </span>
-                          </label>
+                        </label>
                       ))}
                     </div>
 
 
                     {/* Submit Button */}
                     <button
-                        onClick={handleSubmit}
-className="relative h-[50px] w-40 rounded-3xl overflow-hidden border border-green-400 bg-green-600 text-white shadow-2xl transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-green-700 before:duration-500 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-green-700 after:duration-500 hover:text-white  hover:before:h-2/4 hover:after:h-2/4" >
+                      onClick={handleSubmit}
+                    className="px-6 py-2 rounded-full max-w-max border-white/60 border bg-green-600  hover:bg-green-800 text-white font-normal shadow-lg  transition duration-300"
+                  >
                     <span className="relative z-10">Join Now</span>
                     </button>
 
-                  </div>
-                  <div className="absolute justify-right -top-36  right-0 hidden md:block ">
-                    <div className="relative">
-                    <Image
-                      src="/assets/birds.png"
-                      alt="Join the Movement Illustration"
-                      width={500}
-                      height={200}
-                    />
-                  </div>
-                  </div>
-                  
+                  </div>                
                 </div>
-
               </div>
             </div>
           </div>
+          <div className="absolute z-30 justify-right -top-14  right-24 hidden md:block ">
+                    <div className="relative">
+                      <Image
+                        src="/assets/birds.png"
+                        alt="Join the Movement Illustration"
+                        width={500}
+                        height={200}
+                      />
+                    </div>
+                  </div>
+
         </Container>
       </div>
-
     </>
-
   );
 }

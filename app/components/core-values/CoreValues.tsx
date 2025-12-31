@@ -64,10 +64,7 @@ export default function CoreValues() {
                 </div>
 
                 {/* Bottom accent */}
-                <div
-                  className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${gradient}
-                  scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
-                />
+                
               </div>
             </div>
           ))}

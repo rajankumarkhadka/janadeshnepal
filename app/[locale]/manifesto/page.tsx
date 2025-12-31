@@ -22,25 +22,19 @@ export default function Manifesto() {
           <button
             onClick={() => {
               const link = document.createElement('a');
-              link.href = pdfFile; // ✅ language-based PDF
+              link.href = pdfFile; 
               link.download =
                 locale === 'ne'
                   ? 'manifesto-ne.pdf'
                   : 'manifesto-en.pdf';
               link.click();
             }}
-            className="relative h-[50px] px-4 overflow-hidden rounded-full
-              border border-white/60 bg-transparent text-white
-              shadow-2xl transition-all
-              before:absolute before:inset-x-0 before:top-0 before:h-0 before:bg-white/30
-              before:duration-500 before:z-0
-              after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:bg-white/30
-              after:duration-500 after:z-0
-              hover:before:h-2/4 hover:after:h-2/4"
+            className="px-6 py-2 rounded-full border-white/60 border bg-transparent  hover:bg-white/20 text-white font-normal shadow-lg  transition duration-300"
+
           >
             <span className="relative z-10 flex items-center gap-2">
               {t('downloadManifesto')}
-              <span className="text-xs">⬇</span>
+              <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-id="element-124"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>                    </span>
             </span>
           </button>
         }

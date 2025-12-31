@@ -8,10 +8,10 @@ export default function MissionVision() {
   const t = useTranslations("missionVision");
 
   return (
-    <section className="bg-[#fafafa] py-16">
+    <section className="bg-[#fafafa] py-12">
       <Container>
-        <div className="px-4">
-            <div className="grid gap-8 md:grid-cols-2">
+        <div className="">
+            <div className="grid gap-6 md:grid-cols-2">
 
             {/* Mission */}
             <div className="rounded-2xl bg-white p-8 border border-gray-100 shadow-sm">
@@ -23,7 +23,7 @@ export default function MissionVision() {
                 {t("missionTitle")}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-base  leading-relaxed">
                 {t("missionText")}
                 </p>
             </div>
@@ -38,7 +38,7 @@ export default function MissionVision() {
                 {t("visionTitle")}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                 {t("visionText")}
                 </p>
             </div>

@@ -12,11 +12,11 @@ export default function NewsCard({ data }: any) {
           {data.category}
         </span>
 
-        <h3 className="font-bold text-lg text-green-600 mt-2">{data.title}</h3>
+        <h3 className="font-medium text-lg text-green-600 mt-2">{data.title}</h3>
 
         <p className="text-sm text-gray-500 mt-2">{data.date}</p>
 
-        <button className="mt-4 text-gray-400 font-semibold text-sm">
+        <button className="mt-4 text-gray-600 font-medium text-sm">
           Read More →
         </button>
       </div>

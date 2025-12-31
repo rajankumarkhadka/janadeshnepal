@@ -113,45 +113,53 @@ export default function Policies() {
        
 
         {/* FILTER + SEARCH */}
-        <div className="flex flex-wrap items-center gap-3 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className="relative h-[50px] px-4 overflow-hidden rounded-full
-    border border-white/60 bg-[#2772b0] text-white hover:text-white
-     transition-all
+      <div className="flex flex-wrap items-center gap-4 mb-12">
+  {categories.map((cat) => {
+    const isActive = activeCategory === cat;
 
-    before:absolute before:inset-x-0 before:top-0 before:h-0 before:bg-gray-400 before:text-white
-    before:duration-500 before:z-0
+    return (
+      <button
+        key={cat}
+        onClick={() => setActiveCategory(cat)}
+        className={`
+          px-6 py-2 rounded-full border border-white/60
+          text-white font-normal shadow-lg
+          transition-all duration-300
+          ${
+            isActive
+              ? "bg-[#2772b0] scale-105"
+              : "bg-gray-400 hover:bg-[#2772b0]"
+          }
+        `}
+      >
+        <span className="relative z-10 flex items-center gap-2">
+          {t(`categories.${cat}`)}
+        </span>
+      </button>
+    );
+  })}
 
-    after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:bg-gray-400 after:text-white
-    after:duration-500 after:z-0
-
-    hover:before:h-2/4 hover:after:h-2/4"
->
-  <span className="relative z-10 flex items-center gap-2">
-              {t(`categories.${cat}`)}
-  </span>
-            
-            </button>
-          ))}
-
-          <div className="ml-auto relative w-full sm:w-64">
-            <Search
-              size={18}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-white"
-            />
-            <input
-              type="text"
-              placeholder={t('search')}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-full border text-white border-gray-300
-                focus:outline-none     placeholder:text-white/70  bg-[#2772b0] "
-            />
-          </div>
-        </div>
+  {/* SEARCH */}
+  <div className="ml-auto relative w-full sm:w-64">
+    <Search
+      size={18}
+      className="absolute left-3 top-1/2 -translate-y-1/2 text-white"
+    />
+    <input
+      type="text"
+      placeholder={t("search")}
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      className="
+        w-full pl-10 pr-4 py-2 rounded-full
+        border border-gray-300
+        bg-[#2772b0] text-white
+        placeholder:text-white/70
+        focus:outline-none
+      "
+    />
+  </div>
+</div>
 
         {/* POLICY CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -159,7 +167,7 @@ export default function Policies() {
             <div
               key={policy.id}
               className="rounded-2xl border border-gray-300 p-6 bg-white
-                flex flex-col justify-between transition-all duration-300
+                flex flex-col gap-4 justify-between transition-all duration-300
                  "
             >
               <div>
@@ -170,7 +178,7 @@ export default function Policies() {
                   {t(`categories.${policy.category}`)}
                 </span>
 
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-medium text-gray-800 mb-2">
                   {policy.title}
                 </h3>
 
@@ -186,17 +194,9 @@ export default function Policies() {
     link.download = 'policy-technology.pdf';
     link.click();
                }}
-                className="relative h-[40px] max-w-max px-4  mt-4 overflow-hidden rounded-full
-    border border-white/60 bg-[#2772b0] text-white hover:text-white
-     transition-all
-
-    before:absolute before:inset-x-0 before:top-0 before:h-0 before:bg-gray-400 before:text-white
-    before:duration-500 before:z-0
-
-    after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:bg-gray-400 after:text-white
-    after:duration-500 after:z-0
-
-    hover:before:h-2/4 hover:after:h-2/4"
+                className="px-6 py-2 rounded-full border border-gray-100
+          text-green-500 max-w-max font-normal 
+          transition-all duration-300 bg-white hover:bg-gray-100 "
 >
   <span className="relative z-10 flex items-center gap-2">
                 {t('readMore')} →

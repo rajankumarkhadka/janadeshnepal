@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Container from '../layout/Container';
 import { Profiles } from '@/data/profile';
 export default function PartyLeadershipCards() {
-      const locale = useLocale() as 'en' | 'np';
+  const locale = useLocale() as 'en' | 'np';
   const cardsData = [
     {
       id: 1,
@@ -36,13 +36,13 @@ export default function PartyLeadershipCards() {
       description: "Digital governance clarifies who's responsible for the management and operation of.",
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300'
     }
-    ,{
+    , {
       id: 6,
       title: 'Smart Cities',
       description: "Digital governance clarifies who's responsible for the management and operation of.",
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300'
     }
-     , {
+    , {
       id: 7,
       title: 'Smart Cities',
       description: "Digital governance clarifies who's responsible for the management and operation of.",
@@ -51,36 +51,33 @@ export default function PartyLeadershipCards() {
   ];
 
   return (
-    <div className="pb-20 bg-white ">
-      <div className="">
-        {/* Header */}
-        <h1 className="text-4xl justify-center text-center  font-bold text-green-600 mb-12">
-          जनादेश पार्टीको नेतृत्व
-        </h1>
+    <div className="pb-12 bg-white ">
       <Container>
-
-        {/* Landscape Images Row */}
- <div className="flex gap-6 pb-4">
-  {Profiles.map((profile) => (
-    <div
-      key={profile.id}
-      className="
+        <div className="">
+          {/* Header */}
+          <h1 className="text-3xl font-semibold text-green-600 mb-10">
+            जनादेश पार्टीको नेतृत्व
+          </h1>
+        </div>
+        <div className="flex gap-6 pb-12">
+          {Profiles.map((profile) => (
+            <div
+              key={profile.id}
+              className="
         relative h-[400px] w-[300px] overflow-hidden rounded-xl
         bg-white/10 backdrop-blur-md
         border border-white/30
         shadow-lg
       "
-    >
-      {/* IMAGE */}
-      <img
-        src={profile.image}
-        alt={profile.name[locale]}
-        className="h-full w-full object-cover"
-      />
-
-      {/* 🔹 HOLOGRAM LAYER (CARD ONLY) */}
-      <div
-        className="
+            >
+              {/* IMAGE */}
+              <img
+                src={profile.image}
+                alt={profile.name[locale]}
+                className="h-full w-full object-cover"
+              />
+              <div
+                className="
           pointer-events-none
           absolute inset-0
           bg-[linear-gradient(120deg,
@@ -90,38 +87,31 @@ export default function PartyLeadershipCards() {
           opacity-40
           animate-hologram
         "
-      />
+              />
 
-      {/* TEXT */}
-      <div
-        className="
+              {/* TEXT */}
+              <div
+                className="
           absolute bottom-0 z-20 px-4 py-4 text-white
           bg-gradient-to-t from-black/70 via-black/30 to-transparent
         "
-      >
-        <p className="text-sm font-medium">
-          {profile.position[locale]}
-        </p>
+              >
+                <p className="text-sm font-medium">
+                  {profile.position[locale]}
+                </p>
 
-        <h2
-          className={`font-bold ${
-            locale === 'np' ? 'text-lg' : 'text-base'
-          }`}
-        >
-          {profile.name[locale]}
-        </h2>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-
-
-
-        {/* Cards Section */}
+                <h2
+                  className={`font-bold ${locale === 'np' ? 'text-lg' : 'text-base'
+                    }`}
+                >
+                  {profile.name[locale]}
+                </h2>
+              </div>
+            </div>
+          ))}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-          {cardsData.slice( ).map((card, index) => (
+          {cardsData.slice().map((card, index) => (
             <div
               key={card.id}
               className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
@@ -134,11 +124,8 @@ export default function PartyLeadershipCards() {
               </p>
             </div>
           ))}
-
         </div>
       </Container>
-
-      </div>
     </div>
   );
 }

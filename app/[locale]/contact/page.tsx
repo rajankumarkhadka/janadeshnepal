@@ -1,5 +1,5 @@
 'use client';
-import ContactSection from '../../components/contact/Info';
+import ContactSection from '../../components/contact/Contact';
 import Container from '../../components/layout/Container';
 import PageHeader from '../../components/layout/PageHeader';
 import { useTranslations } from 'next-intl';
