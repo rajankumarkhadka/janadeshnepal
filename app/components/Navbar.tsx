@@ -36,9 +36,10 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-[#fafafa] fixed top-0 left-0 z-50">
+    <header className="fixed top-0 left-0 z-50 w-full bg-[#fafafa]">
       <Container>
         <div className="flex items-center py-3">
+          {/* LOGO */}
           <div className="flex items-center gap-3">
             <Image
               src="/assets/logo_janadesh.png"
@@ -49,7 +50,7 @@ export default function Navbar() {
             />
           </div>
 
-          {/* DESKTOP NAV ( > 900px ) */}
+          {/* DESKTOP NAV (> 900px) */}
           <div className="hidden min-[901px]:flex flex-1 justify-end">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between text-sm text-gray-600">
@@ -70,8 +71,8 @@ export default function Navbar() {
                 className={`flex gap-6 font-medium transition duration-200
                   ${
                     locale === 'np'
-                      ? 'text-[18px]'
-                      : 'text-[16.2px] font-normal'
+                      ? 'text-[18px] leading-normal'
+                      : 'text-[16.2px] leading-normal font-normal'
                   }
                 `}
               >
@@ -95,48 +96,69 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* MOBILE MENU BUTTON ( ≤ 900px ) */}
+          {/* MOBILE MENU BUTTON (≤ 900px) */}
           <button
-            className="ml-auto max-[900px]:block hidden"
-            onClick={() => setOpen(!open)}
+            className="ml-auto max-[900px]:block hidden text-gray-800"
+            onClick={() => setOpen(true)}
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            <Menu className='' size={28} />
           </button>
         </div>
-
-        {/* MOBILE MENU ( ≤ 900px ) */}
-        {open && (
-          <div className="max-[900px]:block hidden bg-white border-t py-6">
-            <nav className="flex flex-col gap-4 text-center">
-              {links.map(({ href, key }) => (
-                <Link
-                  key={key}
-                  href={href}
-                  locale={locale}
-                  onClick={() => setOpen(false)}
-                  className={`text-lg transition
-                    ${
-                      cleanPathname === href
-                        ? 'text-green-600 font-semibold'
-                        : 'text-gray-700'
-                    }
-                  `}
-                >
-                  {t(key)}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="flex justify-center gap-4 pt-6">
-              <Facebook size={18} />
-              <Instagram size={18} />
-              <Youtube size={18} />
-              <Twitter size={18} />
-              <LanguageSwitcher currentLocale={locale as 'en' | 'np'} />
-            </div>
-          </div>
-        )}
       </Container>
+
+      {/* MOBILE RIGHT DRAWER (≤ 900px) */}
+      <div
+        className={`fixed inset-0 z-50 max-[900px]:block hidden
+          transition-opacity duration-300
+          ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+        `}
+      >
+        <div
+          className="absolute inset-0 bg-black/40"
+          onClick={() => setOpen(false)}
+        />
+
+        <div
+          className={`absolute right-0 top-0 h-full w-[400px] bg-white shadow-xl p-6 overflow-y-auto
+            transform transition-transform duration-300 ease-in-out
+            ${open ? 'translate-x-0' : 'translate-x-full'}
+          `}
+        >
+          <div className="flex justify-end text-gray-800 mb-6">
+            <button onClick={() => setOpen(false)}>
+              <X size={26} />
+            </button>
+          </div>
+
+          <nav className="flex flex-col gap-5">
+            {links.map(({ href, key }) => (
+              <Link
+                key={key}
+                href={href}
+                locale={locale}
+                onClick={() => setOpen(false)}
+                className={`text-lg transition
+                  ${
+                    cleanPathname === href
+                      ? 'text-green-600 font-semibold'
+                      : 'text-gray-700 hover:text-green-600'
+                  }
+                `}
+              >
+                {t(key)}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex gap-4 mt-8">
+            <Facebook size={18} />
+            <Instagram size={18} />
+            <Youtube size={18} />
+            <Twitter size={18} />
+            <LanguageSwitcher currentLocale={locale as 'en' | 'np'} />
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

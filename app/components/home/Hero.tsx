@@ -37,7 +37,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-blue-600/85" />
           </div>
           <div className="relative z-10">
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[450px] ">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 min-h-[450px] ">
               <div className="text-white py-20">
                 <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-4">
                   Gen-Z नेतृत्वमा उत्तरदायी शासन
@@ -63,9 +63,9 @@ export default function Hero() {
                   </button>
                 </div>
               </div>
-              <div className="relative   lg:flex justify-end">
+              <div className="relative   md:flex justify-end">
                 <div className="absolute lg:flex hidden  z-10 h-[480px] w-[450px] bg-[#00bf63] rounded-xl -top-[48px] right-0"></div>
-                <div className="absolute md:w-[540px] h-[528px] z-50  ">
+                <div className="absolute md:w-[540px] w-[340px] h-[528px] z-50  ">
                   <Image
                     src="/assets/hero_section.png"
                     alt="Leader"
