@@ -4,10 +4,7 @@ import Hero from '../components/home/Hero';
 import JoinMovementNews from '../components/home/JoinMovementNews';
 import NewsUpdates from '../components/home/NewsUpdates';
 import PartyLeadershipCards from '../components/home/party';
-import { redirect } from "next/navigation";
-
 export default function HomePage() {
-    redirect("/en");
 
   return (
     <div className='bg-[#fafafa]'>
