@@ -76,23 +76,12 @@ export default function PartyLeadershipCards() {
                 alt={profile.name[locale]}
                 className="h-full w-full object-cover"
               />
-              <div
-                className="
-          pointer-events-none
-          absolute inset-0
-          bg-[linear-gradient(120deg,
-            transparent 0%,
-            rgba(255,255,255,0.25) 50%,
-            transparent 100%)]
-          opacity-40
-          animate-hologram
-        "
-              />
+             
 
               {/* TEXT */}
               <div
                 className="
-          absolute bottom-0 z-20 px-4 py-4 text-white
+          absolute w-full bottom-0 z-20 px-4 py-4 text-white
           bg-gradient-to-t from-black/70 via-black/30 to-transparent
         "
               >
