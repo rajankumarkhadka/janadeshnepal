@@ -1,8 +1,7 @@
 'use client';
-
-import MissionVision from '../components/about/MissionVision';
-import PoliticalPartyTimeline from '../components/about/PoliticalParty';
-import PageHeader from '../components/layout/PageHeader';
+import MissionVision from '../../components/about/MissionVision';
+import PoliticalPartyTimeline from '../../components/about/PoliticalParty';
+import PageHeader from '../../components/layout/PageHeader';
 import { useTranslations } from 'next-intl';
 
 export default function About() {

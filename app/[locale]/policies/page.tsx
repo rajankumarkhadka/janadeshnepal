@@ -1,7 +1,7 @@
 'use client';
 
-import PageHeader from '../components/layout/PageHeader';
-import Container from '../components/layout/Container';
+import PageHeader from '../../components/layout/PageHeader';
+import Container from '../../components/layout/Container';
 import { useTranslations } from 'next-intl';
 import { useState, useMemo } from 'react';
 import { Search } from 'lucide-react';

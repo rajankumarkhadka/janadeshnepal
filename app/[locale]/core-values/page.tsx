@@ -1,6 +1,6 @@
 'use client';
-import CoreValues from '../components/core-values/CoreValues';
-import PageHeader from '../components/layout/PageHeader';
+import CoreValues from '../../components/core-values/CoreValues';
+import PageHeader from '../../components/layout/PageHeader';
 import { useTranslations } from 'next-intl';
 
 export default function CoreValuesPage() {

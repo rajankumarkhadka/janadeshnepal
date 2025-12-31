@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, User, FileText, Upload, CheckCircle } from 'lucide-react';
-import PageHeader from '../components/layout/PageHeader';
+import PageHeader from '../../components/layout/PageHeader';
 import { useTranslations } from 'next-intl';
 
 // Membership Application Form with Steps

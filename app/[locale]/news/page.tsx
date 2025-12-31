@@ -1,11 +1,11 @@
 'use client';
-import PageHeader from '../components/layout/PageHeader';
+import PageHeader from '../../components/layout/PageHeader';
 import { useLocale, useTranslations } from 'next-intl';
-import FeaturedNews from '../components/news/FeaturedNews';
+import FeaturedNews from '../../components/news/FeaturedNews';
 import { newsEn } from '@/data/news/en';
 import { newsNp } from '@/data/news/np';
-import NewsGrid from '../components/news/NewsGrid';
-import Container from '../components/layout/Container';
+import NewsGrid from '../../components/news/NewsGrid';
+import Container from '../../components/layout/Container';
 
 export default function News() {
   const t = useTranslations('news');

@@ -1,8 +1,8 @@
 'use client';
 
-import PageHeader from '../components/layout/PageHeader';
+import PageHeader from '../../components/layout/PageHeader';
 import { useTranslations, useLocale } from 'next-intl';
-import ManifestoPage from '../components/manifesto/Manifesto';
+import ManifestoPage from '../../components/manifesto/Manifesto';
 
 export default function Manifesto() {
   const t = useTranslations('manifesto');
