@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
   return (
     <>
-      <section className='bg-[#fafafa]  pt-[191px]'></section>
+      <section className='bg-[#fafafa]  pt-[182px]'></section>
       <section className="relative w-full bg-[#fafafa]">
         <Container className=''>
           <div className="absolute inset-0">

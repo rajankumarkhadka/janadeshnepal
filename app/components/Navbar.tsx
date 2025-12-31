@@ -40,7 +40,7 @@ export default function Navbar() {
       <Container>
         <div className="flex items-center py-3">
           {/* LOGO */}
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/assets/logo_janadesh.png"
               alt="Janadesh Party Nepal"
@@ -48,7 +48,7 @@ export default function Navbar() {
               height={80}
               className="h-[110px] w-[145px] object-cover"
             />
-          </div>
+          </Link>
 
           {/* DESKTOP NAV (> 900px) */}
           <div className="hidden min-[901px]:flex flex-1 justify-end">
