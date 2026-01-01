@@ -12,7 +12,7 @@ export default function News() {
   const locale = useLocale();
   const data = locale === 'np' ? newsNp : newsEn;
   return (
-    <div className="bg-[#fafafa]">
+    <div className="bg-white">
       <PageHeader
         title={t('title')}
         subtitle={t('subtitle')}

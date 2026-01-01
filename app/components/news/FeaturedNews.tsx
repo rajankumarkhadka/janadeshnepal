@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function FeaturedNews({ data }: any) {
   return (
-    <div className="relative h-[420px] rounded-3xl overflow-hidden  my-8 ">
+    <div className="relative h-[420px] hover:shadow-md rounded-3xl overflow-hidden  my-8 ">
       <Image
         src={data.image}
         alt={data.title}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function NewsCard({ data }: any) {
   return (
-    <div className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+    <div className="bg-gray-50 rounded-3xl  hover:shadow-lg transition overflow-hidden">
       <div className="relative h-48">
         <Image src={data.image} alt={data.title} fill className="object-cover" />
       </div>

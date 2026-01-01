@@ -139,42 +139,52 @@ export default function Navbar() {
       </Container>
 
       <div
-        className={`fixed inset-0 z-50 max-[900px]:block hidden
-          ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-        `}
-      >
-        <div
-          className="absolute inset-0 bg-black/40"
+  className={`
+    fixed inset-0 z-50 max-[900px]:block hidden
+    transition-opacity duration-300 ease-in-out
+    ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+  `}
+>
+  {/* OVERLAY */}
+  <div
+    className={`
+      absolute inset-0 bg-black
+      transition-opacity duration-300 ease-in-out
+      ${open ? 'opacity-40' : 'opacity-0'}
+    `}
+    onClick={() => setOpen(false)}
+  />
+
+  {/* DRAWER */}
+  <div
+    className={`
+      absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6
+      transform transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+      ${open ? 'translate-x-0' : 'translate-x-full'}
+    `}
+  >
+    <div className="flex text-gray-700 justify-end mb-6">
+      <button onClick={() => setOpen(false)}>
+        <X size={26} />
+      </button>
+    </div>
+
+    <nav className="flex flex-col gap-5">
+      {links.map(({ href, key }) => (
+        <Link
+          key={key}
+          href={href}
+          locale={locale}
           onClick={() => setOpen(false)}
-        />
-
-        <div
-          className={`absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6
-            transform transition-transform duration-500
-            ${open ? 'translate-x-0' : 'translate-x-full'}
-          `}
+          className="text-lg text-gray-700 hover:text-green-600 transition-colors"
         >
-          <div className="flex justify-end mb-6">
-            <button onClick={() => setOpen(false)}>
-              <X size={26} />
-            </button>
-          </div>
+          {t(key)}
+        </Link>
+      ))}
+    </nav>
+  </div>
+</div>
 
-          <nav className="flex flex-col gap-5">
-            {links.map(({ href, key }) => (
-              <Link
-                key={key}
-                href={href}
-                locale={locale}
-                onClick={() => setOpen(false)}
-                className="text-lg text-gray-700 hover:text-green-600"
-              >
-                {t(key)}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
     </header>
   );
 }
