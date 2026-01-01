@@ -158,12 +158,25 @@ export default function Navbar() {
   {/* DRAWER */}
   <div
     className={`
-      absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6
+      absolute right-0 top-0 max-h-max w-[300px] bg-white shadow-xl p-6
       transform transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
       ${open ? 'translate-x-0' : 'translate-x-full'}
     `}
   >
-    <div className="flex text-gray-700 justify-end mb-6">
+    <div className="flex text-gray-700 justify-between mb-6">
+      <div className="flex flex-col gap-4">
+       <a href="#">info@janadeshnepal.org</a>
+
+        <div className="flex flex-col gap-4 text-gray-800">
+         <div className="flex gap-4 items-center">
+          <LanguageSwitcher currentLocale={locale as 'en' | 'np'} />
+          <Facebook size={16} />
+          <Instagram size={16} />
+          <Youtube size={16} />
+          <Twitter size={16} />
+         </div>
+      </div>
+      </div>
       <button onClick={() => setOpen(false)}>
         <X size={26} />
       </button>
@@ -181,6 +194,8 @@ export default function Navbar() {
           {t(key)}
         </Link>
       ))}
+
+      
     </nav>
   </div>
 </div>
