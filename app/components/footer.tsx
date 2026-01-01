@@ -45,7 +45,7 @@ export default function Footer() {
             />
           </div>
 
-            <div className="flex flex-col  space-y-2">
+            <div className="flex flex-col text-start  space-y-2">
               <h2 className="text-lg font-bold text-[#144a7b]">
                     {t('quickLinks')}
               </h2>
@@ -55,7 +55,7 @@ export default function Footer() {
                   key={link.key}
                   href={link.href}
                   locale={locale}
-                  className={`text-base text-[#144a7b] hover:text-green-600 ${
+                  className={`text-base text-[#144a7b] text-start hover:text-green-600 ${
                     pathname === link.href ? 'font-bold' : ''
                   }`}
                 >
@@ -66,7 +66,7 @@ export default function Footer() {
 
             {/* DONATE */}
             <div className="space-y-4">
-              <h2 className="text-lg font-bold text-center text-[#144a7b]">
+              <h2 className="text-lg font-bold text-center sm:text-start text-[#144a7b]">
                 {t('donate')}
               </h2>
               <div className="relative h-[150px] w-[150px] mx-auto md:mx-0">
