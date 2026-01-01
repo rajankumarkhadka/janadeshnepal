@@ -48,14 +48,14 @@ export default function AboutMovement() {
                 </p>
               </div>
               <div className="grid md:col-span-2 grid-cols-2 gap-6">
-                <div className="relative overflow-hidden rounded-lg shadow-lg h-64">
+                <div className="relative overflow-hidden rounded-lg transition duration-300 hover:shadow-md h-64">
                   <img
                     src={timelineData[activeIndex].image}
                     alt={timelineData[activeIndex].alt}
                     className="w-full h-full object-cover transition-all duration-500"
                   />
                 </div>
-                <div className="relative overflow-hidden rounded-lg shadow-lg h-64">
+                <div className="relative overflow-hidden rounded-lg transition duration-300 hover:shadow-md h-64">
                   <img
                     src={timelineData[(activeIndex + 1) % timelineData.length].image}
                     alt={timelineData[(activeIndex + 1) % timelineData.length].alt}

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import {
   Facebook,
@@ -21,7 +21,19 @@ export default function Navbar() {
   const t = useTranslations('navbar');
   const pathname = usePathname();
   const cleanPathname = pathname.replace(`/${locale}`, '') || '/';
+
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false); // ✅ NEW
+
+  // ✅ Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const links = [
     { href: '/', key: 'home' },
@@ -36,24 +48,43 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-[#fafafa]">
+    <header
+      className={`
+        fixed top-0 left-0 z-50 w-full bg-[#fafafa]
+        transition-all duration-300
+        ${scrolled ? '' : ''}
+      `}
+    >
       <Container>
-        <div className="flex items-center py-3">
-          {/* LOGO */}
+        <div
+          className={`
+            flex items-center transition-all duration-300
+            ${scrolled ? 'py-2' : 'py-3'}
+          `}
+        >
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/assets/logo_janadesh.png"
               alt="Janadesh Party Nepal"
               width={80}
               height={80}
-              className="h-[110px] w-[145px] object-cover"
+              className={`
+                object-contain transition-all duration-300
+                ${scrolled ? 'h-[90px] w-[90px]' : 'h-[110px] w-[145px]'}
+              `}
             />
           </Link>
 
-          {/* DESKTOP NAV (> 900px) */}
           <div className="hidden min-[901px]:flex flex-1 justify-end">
             <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between text-sm text-gray-600">
+
+              <div
+                className={`
+                  flex items-center justify-between text-sm text-gray-600
+                  transition-all duration-300 overflow-hidden
+                  ${scrolled ? 'h-0 opacity-0' : 'h-auto opacity-100'}
+                `}
+              >
                 <span>info@janadeshnepal.org</span>
 
                 <div className="flex items-center gap-4">
@@ -65,14 +96,15 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <hr className="bg-gray-300" />
+              {!scrolled && <hr className="bg-gray-300" />}
 
               <nav
-                className={`flex gap-6 font-medium transition duration-200
+                className={`
+                  flex gap-6 transition-all duration-300
                   ${
                     locale === 'np'
-                      ? 'text-[18px] leading-normal'
-                      : 'text-[16.2px] leading-normal font-normal'
+                      ? 'text-[18px]'
+                      : 'text-[16.2px] font-normal'
                   }
                 `}
               >
@@ -81,7 +113,8 @@ export default function Navbar() {
                     key={key}
                     href={href}
                     locale={locale}
-                    className={`transition hover:text-green-600
+                    className={`
+                      transition hover:text-green-600
                       ${
                         cleanPathname === href
                           ? 'text-green-600'
@@ -96,20 +129,17 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* MOBILE MENU BUTTON (≤ 900px) */}
           <button
             className="ml-auto max-[900px]:block hidden text-gray-800"
             onClick={() => setOpen(true)}
           >
-            <Menu className='' size={28} />
+            <Menu size={28} />
           </button>
         </div>
       </Container>
 
-      {/* MOBILE RIGHT DRAWER (≤ 900px) */}
       <div
         className={`fixed inset-0 z-50 max-[900px]:block hidden
-          transition-opacity duration-300
           ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
         `}
       >
@@ -119,12 +149,12 @@ export default function Navbar() {
         />
 
         <div
-          className={`absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6 overflow-y-auto
-            transform transition-transform duration-500 ease-in-out
+          className={`absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6
+            transform transition-transform duration-500
             ${open ? 'translate-x-0' : 'translate-x-full'}
           `}
         >
-          <div className="flex justify-end text-gray-800 mb-6">
+          <div className="flex justify-end mb-6">
             <button onClick={() => setOpen(false)}>
               <X size={26} />
             </button>
@@ -137,26 +167,12 @@ export default function Navbar() {
                 href={href}
                 locale={locale}
                 onClick={() => setOpen(false)}
-                className={`text-lg transition
-                  ${
-                    cleanPathname === href
-                      ? 'text-green-600 font-semibold'
-                      : 'text-gray-700 hover:text-green-600'
-                  }
-                `}
+                className="text-lg text-gray-700 hover:text-green-600"
               >
                 {t(key)}
               </Link>
             ))}
           </nav>
-
-          <div className="flex gap-4 mt-8">
-            <Facebook size={18} />
-            <Instagram size={18} />
-            <Youtube size={18} />
-            <Twitter size={18} />
-            <LanguageSwitcher currentLocale={locale as 'en' | 'np'} />
-          </div>
         </div>
       </div>
     </header>

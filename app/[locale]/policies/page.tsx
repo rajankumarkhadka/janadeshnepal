@@ -167,7 +167,7 @@ export default function Policies() {
             <div
               key={policy.id}
               className="rounded-2xl border border-gray-300 p-6 bg-white
-                flex flex-col gap-4 justify-between transition-all duration-300
+                flex flex-col gap-4 hover:shadow-md justify-between transition-all duration-300
                  "
             >
               <div>

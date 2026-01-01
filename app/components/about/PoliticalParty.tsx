@@ -69,7 +69,7 @@ function TimelineItem({ item, reverse, locale }: any) {
       </motion.div>
 
       {/* TEXT */}
-      <div className="bg-white rounded-3xl shadow-xl p-8 max-w-[500px] mt-8 lg:mt-0 ">
+      <div className=" rounded-3xl  border-gray-100 bg-gray-50 transition duration-300 hover:shadow-md p-8 max-w-[500px] mt-8 lg:mt-0 ">
         <span className="text-gray-400 text-sm">{item.year}</span>
 
         <h3 className="text-xl text-[#2772b0] font-semibold mt-2">

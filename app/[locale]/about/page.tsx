@@ -8,7 +8,7 @@ export default function About() {
   const t = useTranslations('about');
 
   return (
-    <div className="bg-[#fafafa]">
+    <div className="bg-white">
       <PageHeader
         title={t('title')}
         subtitle={t('subtitle')}

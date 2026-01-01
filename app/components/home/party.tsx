@@ -107,7 +107,7 @@ export default function PartyLeadershipCards() {
           {cardsData.slice().map((card, index) => (
             <div
               key={card.id}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className=" border-2 border-gray-200 rounded-2xl p-6 bg-gray-50 hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-bold text-green-600 mb-4">
                 {card.title}

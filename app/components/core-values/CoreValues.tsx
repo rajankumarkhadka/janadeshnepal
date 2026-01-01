@@ -28,7 +28,7 @@ export default function CoreValues() {
           {values.map(({ key, icon: Icon, gradient, bgGradient }) => (
             <div
               key={key}
-              className="group relative overflow-hidden rounded-3xl bg-white p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-shadow duration-500"
+              className="group relative overflow-hidden rounded-3xl bg-white p-8 border border-gray-100  hover:shadow-md transition-shadow duration-500"
             >
               {/* Background hover effect */}
               <div
