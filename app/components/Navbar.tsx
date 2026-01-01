@@ -119,8 +119,8 @@ export default function Navbar() {
         />
 
         <div
-          className={`absolute right-0 top-0 h-full w-[400px] bg-white shadow-xl p-6 overflow-y-auto
-            transform transition-transform duration-300 ease-in-out
+          className={`absolute right-0 top-0 h-full w-[300px] bg-white shadow-xl p-6 overflow-y-auto
+            transform transition-transform duration-500 ease-in-out
             ${open ? 'translate-x-0' : 'translate-x-full'}
           `}
         >

@@ -66,7 +66,7 @@ export default function Footer() {
 
             {/* DONATE */}
             <div className="space-y-4">
-              <h2 className="text-lg font-bold text-[#144a7b]">
+              <h2 className="text-lg font-bold text-center text-[#144a7b]">
                 {t('donate')}
               </h2>
               <div className="relative h-[150px] w-[150px] mx-auto md:mx-0">
