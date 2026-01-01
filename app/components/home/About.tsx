@@ -37,8 +37,8 @@ export default function AboutMovement() {
                 View More
               </button>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-[400px_800px] gap-6 mb-8">
-              <div className=" items-center">
+            <div className="grid grid-cols-1  md:grid-cols-3 gap-6 mb-8">
+              <div className="md:col-span-1 items-center">
                 <p className="text-base text-gray-700 leading-relaxed">
                   The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
                 </p>
@@ -47,7 +47,7 @@ export default function AboutMovement() {
                   The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid md:col-span-2 grid-cols-2 gap-6">
                 <div className="relative overflow-hidden rounded-lg shadow-lg h-64">
                   <img
                     src={timelineData[activeIndex].image}

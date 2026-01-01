@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#fafafa] border-t border-gray-200">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-40  justify-between py-12 text-center md:text-left">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:gap-40 gap-10  justify-between py-12 lg:text-center md:text-left">
 
           {/* LOGO */}
           <div className=" relative w-auto h-[200px]">
@@ -45,9 +45,6 @@ export default function Footer() {
             />
           </div>
 
-          {/* CONTENT */}
-
-            {/* QUICK LINKS */}
             <div className="flex flex-col  space-y-2">
               <h2 className="text-lg font-bold text-[#144a7b]">
                     {t('quickLinks')}

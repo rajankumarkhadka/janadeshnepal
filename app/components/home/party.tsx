@@ -59,12 +59,15 @@ export default function PartyLeadershipCards() {
             जनादेश पार्टीको नेतृत्व
           </h1>
         </div>
-        <div className="flex gap-6 pb-12">
+        <div className="flex gap-6 pb-12  overflow-x-auto 
+    scroll-smooth
+    snap-x snap-mandatory
+    scrollbar-hide">
           {Profiles.map((profile) => (
             <div
               key={profile.id}
               className="
-        relative h-[400px] w-[300px] overflow-hidden rounded-xl
+        relative h-[400px] min-w-[300px] scri overflow-hidden rounded-xl
         bg-white/10 backdrop-blur-md
         border border-white/30
         shadow-lg
@@ -99,6 +102,7 @@ export default function PartyLeadershipCards() {
             </div>
           ))}
         </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
           {cardsData.slice().map((card, index) => (
             <div
