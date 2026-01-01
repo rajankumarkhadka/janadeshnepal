@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
   return (
     <>
-      <section className='bg-[#fafafa]  pt-[182px]'></section>
+      <section className='bg-[#fafafa] pt-[130px] lg:pt-[182px]'></section>
       <section className="relative w-full bg-[#fafafa]">
         <Container className=''>
           <div className="absolute inset-0">
@@ -63,7 +63,7 @@ export default function Hero() {
                   </button>
                 </div>
               </div>
-              <div className="relative   md:flex justify-start lg:justify-end">
+              <div className="relative hidden  lg:flex justify-start lg:justify-end">
                 <div className="absolute lg:flex hidden  z-10 h-[480px] w-[450px] bg-[#00bf63] rounded-xl -top-[48px] right-0"></div>
                 <div className="lg:absolute md:w-[540px] w-[340px] h-[400px] md:h-[530px] z-50  ">
                   <Image
@@ -80,8 +80,8 @@ export default function Hero() {
           </div>
         </Container>
         <div className="relative ">
-          <div className="absolute  inset-0 flex items-center">
-            <div className='bg-blue-500 w-full mb-[75px]'>
+          <div className="md:absolute  inset-0 flex items-center">
+            <div className='bg-blue-500 w-full md:mb-[75px]'>
               <Container className=''>
                 <div className="flex items-center gap-3 py-7 text-sm text-white transition-all duration-500">
                   <span className="inline-flex h-4 w-4 items-center justify-center rounded bg-white/20">

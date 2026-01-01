@@ -8,24 +8,46 @@ export default function AboutMovement() {
   return (
     <section className="bg-white py-12">
       <Container>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">
-          {icons.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center justify-center rounded-2xl bg-gray-50 py-10 transition duration-300 hover:shadow-md"
-            >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={54}
-                height={54}
-              />
-              <p className="mt-4 text-base font-medium text-blue-600 text-center">
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </div>
+       <div
+  className="
+    mb-10
+    overflow-x-auto
+    scrollbar-hide
+  "
+>
+  <div
+    className="
+      grid grid-flow-col auto-cols-[160px]
+      sm:grid-flow-row sm:grid-cols-3
+      lg:grid-cols-5
+      gap-6
+      pb-4
+    "
+  >
+    {icons.map((item, idx) => (
+      <div
+        key={idx}
+        className="
+          flex flex-col items-center justify-center
+          rounded-2xl bg-gray-50 py-10
+          transition duration-300 hover:shadow-md
+          min-w-[140px]
+        "
+      >
+        <Image
+          src={item.icon}
+          alt={item.title}
+          width={54}
+          height={54}
+        />
+        <p className="mt-4 text-base font-medium text-blue-600 text-center">
+          {item.title}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <div className="">
           <div className="">
@@ -37,63 +59,39 @@ export default function AboutMovement() {
                 View More
               </button>
             </div>
-            <div className="grid grid-cols-1  md:grid-cols-3 gap-6 mb-8">
-              <div className="md:col-span-1 items-center">
-                <p className="text-base text-gray-700 leading-relaxed">
-                  The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
-                </p>
-                <br />
-                <p className="text-base text-gray-700 leading-relaxed">
-                  The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
-                </p>
-              </div>
-              <div className="grid md:col-span-2 grid-cols-2 gap-6">
-                <div className="relative overflow-hidden rounded-lg transition duration-300 hover:shadow-md h-64">
-                  <img
-                    src={timelineData[activeIndex].image}
-                    alt={timelineData[activeIndex].alt}
-                    className="w-full h-full object-cover transition-all duration-500"
-                  />
-                </div>
-                <div className="relative overflow-hidden rounded-lg transition duration-300 hover:shadow-md h-64">
-                  <img
-                    src={timelineData[(activeIndex + 1) % timelineData.length].image}
-                    alt={timelineData[(activeIndex + 1) % timelineData.length].alt}
-                    className="w-full h-full object-cover transition-all duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="relative mt-8 flex items-center">
-              <div className="absolute left-0 right-0 border-t-2 border-dashed border-gray-400"></div>
-              <div className="relative flex justify-between items-center w-full">
-                {timelineData.map((item, index) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setActiveIndex(index)}
-                    className={`relative z-10 w-6 h-6 rounded-full border-2 transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 ${index === activeIndex
-                        ? 'bg-black border-black scale-125'
-                        : 'bg-gray-400 border-gray-400'
-                      }`}
-                    aria-label={`View timeline item ${index + 1}`}
-                  >
-                    <span className="sr-only">Timeline point {index + 1}</span>
-                  </button>
-                ))}
-              </div>
-              <div className="relative flex justify-between items-center mt-4">
-                {timelineData.map((item, index) => (
-                  <div
-                    key={`label-${item.id}`}
-                    className="text-xs text-gray-500 text-center w-6"
-                  >
-                    {index === activeIndex && (
-                      <span className="font-semibold text-black"></span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+  {/* TEXT */}
+  <div className="md:col-span-1">
+    <p className="text-base text-gray-700 leading-relaxed">
+      The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
+    </p>
+    <br />
+    <p className="text-base text-gray-700 leading-relaxed">
+      The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
+    </p>
+  </div>
+
+  {/* PHOTOS */}
+  <div className="md:col-span-2">
+    <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-2">
+      {timelineData.map((item) => (
+        <div
+          key={item.id}
+          className="flex-shrink-0 w-[260px] h-64 rounded-lg overflow-hidden transition hover:shadow-md"
+        >
+          <img
+            src={item.image}
+            alt={item.alt}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
           </div>
         </div>
       </Container>

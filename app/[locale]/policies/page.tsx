@@ -108,42 +108,38 @@ export default function Policies() {
       />
 
       <Container className="py-14">
+   <div className="flex items-center gap-4 mb-12">
 
-        {/* SECTION TITLE */}
-       
+  <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide flex-nowrap">
+    {categories.map((cat) => {
+      const isActive = activeCategory === cat;
 
-        {/* FILTER + SEARCH */}
-      <div className="flex flex-wrap items-center gap-4 mb-12">
-  {categories.map((cat) => {
-    const isActive = activeCategory === cat;
-
-    return (
-      <button
-        key={cat}
-        onClick={() => setActiveCategory(cat)}
-        className={`
-          px-6 py-2 rounded-full border border-white/60
-          text-white font-normal shadow-lg
-          transition-all duration-300
-          ${
-            isActive
-              ? "bg-[#2772b0] scale-105"
-              : "bg-gray-400 hover:bg-[#2772b0]"
-          }
-        `}
-      >
-        <span className="relative z-10 flex items-center gap-2">
+      return (
+        <button
+          key={cat}
+          onClick={() => setActiveCategory(cat)}
+          className={`
+            flex-shrink-0
+            px-6 py-2 rounded-full border border-white/60
+            text-white font-normal 
+            transition-all duration-300
+            ${
+              isActive
+                ? "bg-[#2772b0] scale-105"
+                : "bg-gray-400 hover:bg-[#2772b0]"
+            }
+          `}
+        >
           {t(`categories.${cat}`)}
-        </span>
-      </button>
-    );
-  })}
+        </button>
+      );
+    })}
+  </div>
 
-  {/* SEARCH */}
-  <div className="ml-auto relative w-full sm:w-64">
+  <div className="relative w-32 sm:w-56 flex-shrink-0">
     <Search
       size={18}
-      className="absolute left-3 top-1/2 -translate-y-1/2 text-white"
+      className="absolute left-2 top-1/2 -translate-y-1/2 text-white"
     />
     <input
       type="text"
@@ -151,7 +147,7 @@ export default function Policies() {
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       className="
-        w-full pl-10 pr-4 py-2 rounded-full
+        w-full pl-6 sm:pl-10 pr-4 py-2 rounded-full
         border border-gray-300
         bg-[#2772b0] text-white
         placeholder:text-white/70
@@ -159,7 +155,9 @@ export default function Policies() {
       "
     />
   </div>
+
 </div>
+
 
         {/* POLICY CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -167,7 +165,7 @@ export default function Policies() {
             <div
               key={policy.id}
               className="rounded-2xl border border-gray-300 p-6 bg-white
-                flex flex-col gap-4 hover:shadow-md justify-between transition-all duration-300
+                flex flex-col gap-4 justify-between transition-all duration-300
                  "
             >
               <div>

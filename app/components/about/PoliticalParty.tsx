@@ -16,7 +16,7 @@ export default function Timeline() {
       {/* CENTER LINE */}
       <div className="absolute left-1/2 top-0 h-full w-[2px] bg-gray-200 hidden lg:block" />
 
-      <div className="space-y-24">
+      <div className="space-y-[78px]">
         {timelineData.map((item, index) => (
           <TimelineItem
             key={index}
@@ -48,7 +48,7 @@ function TimelineItem({ item, reverse, locale }: any) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true }}
-      className={`relative flex flex-col lg:flex-row items-center justify-between ${
+      className={`relative flex flex-col gap-8 lg:flex-row items-center justify-between ${
         reverse ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -69,7 +69,7 @@ function TimelineItem({ item, reverse, locale }: any) {
       </motion.div>
 
       {/* TEXT */}
-      <div className=" rounded-3xl  border-gray-100 bg-gray-50 transition duration-300 hover:shadow-md p-8 max-w-[500px] mt-8 lg:mt-0 ">
+      <div className=" rounded-3xl  border-gray-100 bg-gray-50 transition duration-300 hover:shadow-md p-8 w-full lg:max-w-[500px] mt-8 lg:mt-0 ">
         <span className="text-gray-400 text-sm">{item.year}</span>
 
         <h3 className="text-xl text-[#2772b0] font-semibold mt-2">
