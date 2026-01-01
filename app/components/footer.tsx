@@ -32,10 +32,10 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#fafafa] border-t border-gray-200">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-20 justify-between py-12 text-center md:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-40  justify-between py-12 text-center md:text-left">
 
           {/* LOGO */}
-          <div className="md:col-span-3 relative h-[200px]">
+          <div className=" relative w-auto h-[200px]">
             <Image
               src="/assets/logo_janadesh.png"
               alt="Janadesh Party Logo"
@@ -46,10 +46,9 @@ export default function Footer() {
           </div>
 
           {/* CONTENT */}
-          <div className="md:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
             {/* QUICK LINKS */}
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col  space-y-2">
               <h2 className="text-lg font-bold text-[#144a7b]">
                     {t('quickLinks')}
               </h2>
@@ -84,8 +83,8 @@ export default function Footer() {
             </div>
 
             {/* SOCIAL LINKS */}
-            <div className="space-y-3 text-[#144a7b]">
-                  <h2 className="text-lg font-bold text-[#144a7b]">
+            <div className="space-y-3 text-center items-center text-[#144a7b]">
+                  <h2 className="text-lg font-bold text-start text-[#144a7b]">
                 {t('connect')}
               </h2>
               <a
@@ -124,10 +123,6 @@ export default function Footer() {
                 <Twitter size={16} /> Twitter
               </a>
             </div>
-
-           
-
-          </div>
         </div>
          
       </Container>

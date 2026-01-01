@@ -12,7 +12,7 @@ export default function PageHeader({
   action,
 }: PageHeaderProps) {
   return (
-    <section className="bg-[#2673b0] py-16 text-center text-white  md:pt-[220px]">
+    <section className="bg-[#2673b0] py-16 text-center text-white pt-[220px] ">
       <Container>
         <h1 className="text-2xl md:text-3xl font-semibold mb-2">
           {title}
