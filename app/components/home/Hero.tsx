@@ -65,7 +65,7 @@ export default function Hero() {
               </div>
               <div className="relative   md:flex justify-start lg:justify-end">
                 <div className="absolute lg:flex hidden  z-10 h-[480px] w-[450px] bg-[#00bf63] rounded-xl -top-[48px] right-0"></div>
-                <div className="lg:absolute md:w-[540px] w-[340px] h-[400px] md:h-[528px] z-50  ">
+                <div className="lg:absolute md:w-[540px] w-[340px] h-[400px] md:h-[530px] z-50  ">
                   <Image
                     src="/assets/hero_section.png"
                     alt="Leader"
