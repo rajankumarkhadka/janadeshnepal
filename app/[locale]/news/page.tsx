@@ -1,25 +1,35 @@
 'use client';
-import PageHeader from '../../components/layout/PageHeader';
 import { useLocale, useTranslations } from 'next-intl';
-import FeaturedNews from '../../components/news/FeaturedNews';
-import { newsEn } from '@/data/news/en';
-import { newsNp } from '@/data/news/np';
-import NewsGrid from '../../components/news/NewsGrid';
-import Container from '../../components/layout/Container';
+import { useBlogs } from '@/hooks/useBlogs';
+import NewsCard from '@/app/components/news/NewsCard';
+import FeaturedNewsComponent from '@/app/components/news/FeaturedNews';
+import PageHeader from '@/app/components/layout/PageHeader';
+import Container from '@/app/components/layout/Container';
 
-export default function News() {
-  const t = useTranslations('news');
-  const locale = useLocale();
-  const data = locale === 'np' ? newsNp : newsEn;
+export default function HomePage() {
+  const locale = useLocale(); // 'en' | 'np'
+  const t = useTranslations('news'); // Load the 'news' namespace from JSON
+
+  const { data, isLoading } = useBlogs(locale as 'en' | 'np');
+
+  if (isLoading) return <p>Loading news...</p>;
+
+  const featuredBlog = data?.[0];
+  const blogsList = data?.slice(1);
+
   return (
-    <div className="bg-white">
-      <PageHeader
-        title={t('title')}
-        subtitle={t('subtitle')}
-      />
-           <Container>
-    <FeaturedNews data={data.featured} />
-        <NewsGrid news={data.list} />
+    <div className="bg-gray-200">
+      {/* Page Header */}
+      <PageHeader title={t('title')} subtitle={t('subtitle')} />
+
+      <Container>
+        <FeaturedNewsComponent blog={featuredBlog} locale={locale as 'en' | 'np'} />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-8 gap-6">
+          {blogsList?.map((blog: any) => (
+            <NewsCard key={blog.id} blog={blog} locale={locale as 'en' | 'np'} />
+          ))}
+        </div>
       </Container>
     </div>
   );
