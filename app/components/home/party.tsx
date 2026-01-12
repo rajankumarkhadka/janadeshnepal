@@ -3,8 +3,15 @@ import { useLocale } from 'next-intl'
 import { useState } from 'react';
 import Container from '../layout/Container';
 import { Profiles } from '@/data/profile';
+import { useLeadership } from '@/hooks/useLeadership';
+import Image from 'next/image';
 export default function PartyLeadershipCards() {
-  const locale = useLocale() as 'en' | 'np';
+  const locale = useLocale() as 'np' | 'en';
+  const { data = [], isLoading, isError } = useLeadership(locale);
+
+  if (isLoading) return <p className="py-20">Loading...</p>;
+  if (isError) return <p className="py-20 text-red-500">Error</p>;
+
   const cardsData = [
     {
       id: 1,
@@ -63,53 +70,53 @@ export default function PartyLeadershipCards() {
     scroll-smooth
     snap-x snap-mandatory
     scrollbar-hide">
-          {Profiles.map((profile) => (
+          {data.map((profile: any) => (
             <div
               key={profile.id}
               className="
-        relative h-[400px] min-w-[300px] scri overflow-hidden rounded-xl
+        relative h-[400px] w-[300px]  overflow-hidden rounded-xl
         bg-white/10 backdrop-blur-md
         border border-white/30
         shadow-lg
       "
             >
-              {/* IMAGE */}
-              <img
-                src={profile.image}
-                alt={profile.name[locale]}
+              <Image
+                src={profile.image || '/images/avatar-placeholder.png'}
+                alt={locale === 'np' ? profile.name_np : profile.name_en}
                 className="h-full w-full object-cover"
+                fill
               />
-             
-
-              {/* TEXT */}
               <div
                 className="
           absolute w-full bottom-0 z-20 px-4 py-4 text-white
           bg-gradient-to-t from-black/70 via-black/30 to-transparent
         "
               >
-                <p className="text-sm font-medium">
-                  {profile.position[locale]}
+                <p className="text-sm font-medium capitalize">
+                  {locale === 'np'
+                    ? profile.position_np ?? profile.position_en
+                    : profile.position_en}
                 </p>
 
                 <h2
-                  className={`font-bold ${locale === 'np' ? 'text-lg' : 'text-base'
+                  className={`font-bold capitalize ${locale === 'np' ? 'text-lg' : 'text-base'
                     }`}
                 >
-                  {profile.name[locale]}
-                </h2>
+                  {locale === 'np'
+                    ? profile.name_np ?? profile.name_en
+                    : profile.name_en}                </h2>
               </div>
             </div>
           ))}
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
           {cardsData.slice().map((card, index) => (
             <div
               key={card.id}
               className=" border-2 border-gray-200 rounded-2xl p-6 bg-gray-50 hover:shadow-md transition-shadow"
             >
-              <h3 className="text-xl font-bold text-green-600 mb-4">
+              <h3 className="text-xl font-bold capitalize text-green-600 mb-4">
                 {card.title}
               </h3>
               <p className="text-gray-700 leading-relaxed">

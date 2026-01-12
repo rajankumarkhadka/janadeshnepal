@@ -87,12 +87,7 @@ key={blog.id}
 
               <div>
                 <h4
-                  className="
-                  text-gray-600
-        font-medium text-base mb-1
-        transition-colors duration-300
-        group-hover:text-green-500
-      "
+                  className=" text-gray-600 font-medium text-base mb-1 transition-colors duration-300 group-hover:text-green-500 "
                 >
                   {locale === 'np' ? blog.title_np : blog.title_en}
                 </h4>

@@ -1,4 +1,5 @@
 'use client';
+import { formatNepaliDate } from '@/utils/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,12 +10,13 @@ export default function FeaturedNewsComponent({
   blog: any;
   locale: 'en' | 'np';
 }) {
+  // Only render if blog exists
   if (!blog) return null;
 
   return (
     <div className="relative h-[420px] hover:shadow-md rounded-3xl overflow-hidden my-8">
       <Image
-        src={blog.featured_image}
+        src={blog.featured_image || '/images/news-placeholder.jpg'}
         alt={locale === 'np' ? blog.title_np : blog.title_en}
         fill
         className="object-cover"
@@ -32,7 +34,7 @@ export default function FeaturedNewsComponent({
         </h3>
 
         <p className="text-sm opacity-80">
-          {blog.date} • {blog.readTime}
+          {formatNepaliDate(blog.published_at, locale)}
         </p>
 
         <Link

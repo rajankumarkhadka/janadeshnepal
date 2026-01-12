@@ -1,3 +1,4 @@
+import { formatNepaliDate } from '@/utils/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
 export default function NewsCard({
@@ -11,7 +12,7 @@ export default function NewsCard({
     <div className="bg-gray-50 rounded-3xl hover:shadow-lg transition overflow-hidden">
       <div className="relative h-48">
         <Image
-          src={blog.featured_image}
+          src={blog.featured_image || '/images/news-placeholder.jpg'}
           alt={locale === 'np' ? blog.title_np : blog.title_en}
           fill
           className="object-cover"
@@ -30,12 +31,12 @@ export default function NewsCard({
           {locale === 'np' ? blog.title_np : blog.title_en}
         </h3>
 
-        <p className="text-sm text-gray-500 mt-2">{blog.date}</p>
+        <p className="text-sm text-gray-500 mt-2"> {formatNepaliDate(blog.published_at, locale)}</p>
 
         <Link href={`/${locale}/news/${blog.slug}`}  className="mt-4 text-gray-600 font-medium text-sm">
           Read More →
         </Link>
-      </div>
+       </div>
     </div>
   );
 }
