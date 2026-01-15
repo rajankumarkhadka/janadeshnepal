@@ -33,9 +33,13 @@ export default function NewsCard({
 
         <p className="text-sm text-gray-500 mt-2"> {formatNepaliDate(blog.published_at, locale)}</p>
 
-        <Link href={`/${locale}/news/${blog.slug}`}  className="mt-4 text-gray-600 font-medium text-sm">
-          Read More →
-        </Link>
+        <Link
+  href={`/${locale}/news/${blog.slug}`}
+  className="mt-4 text-gray-600 font-medium text-sm"
+>
+  {locale === 'np' ? 'थप पढ्नुहोस् →' : 'Read More →'}
+</Link>
+
        </div>
     </div>
   );

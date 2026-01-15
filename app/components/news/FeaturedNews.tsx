@@ -37,12 +37,12 @@ export default function FeaturedNewsComponent({
           {formatNepaliDate(blog.published_at, locale)}
         </p>
 
-        <Link
-          href={`/${locale}/news/${blog.slug}`}
-          className="mt-4 text-white font-medium text-sm block"
-        >
-          Read More →
-        </Link>
+             <Link
+  href={`/${locale}/news/${blog.slug}`}
+  className="mt-4 text-gray-100 font-medium text-sm"
+>
+  {locale === 'np' ? 'थप पढ्नुहोस् →' : 'Read More →'}
+</Link>
       </div>
     </div>
   );

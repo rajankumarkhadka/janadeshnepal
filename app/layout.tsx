@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className='bg-[#f2f5f6]'>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>

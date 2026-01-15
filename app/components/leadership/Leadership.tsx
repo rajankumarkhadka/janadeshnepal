@@ -9,6 +9,9 @@ export default function LeadershipPage() {
 
   if (isLoading) return <p className="text-center py-20">Loading...</p>;
   if (isError) return <p className="text-center py-20 text-red-500">Error</p>;
+if (!data || data.length === 0) {
+  return <p className="text-3xl md:text-3xl font-bold text-center text-sky-600 py-12">Our Central Committee data is not found</p>;
+}
 
   return (
     <section className="bg-white py-12">

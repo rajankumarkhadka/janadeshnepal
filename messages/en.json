@@ -135,6 +135,43 @@
       "description": "Eliminating bureaucracy through technology, smart IDs, online services, and blockchain-based records.",
       "why": "Without digital governance, modern democracy cannot function."
     }
+  },
+  "membership": {
+    "title": "Membership",
+    "subtitle": "Application Form",
+    "header": "Membership Application",
+    "hint": "Please fill all details correctly",
+    "steps": {
+      "personal": "Personal Information",
+      "address": "Address",
+      "documents": "Documents",
+      "review": "Review"
+    },
+    "fields": {
+      "fullName": "Full Name",
+      "fatherName": "Father's Name",
+      "motherName": "Mother's Name",
+      "gender": "Gender",
+      "dateofbirth":"Date of birth",
+      "phone": "Phone Number",
+      "email": "Email",
+      "province": "Province",
+      "district": "District",
+      "municipality": "Municipality",
+      "ward": "Ward No",
+      "tole": "Tole / Village",
+      "citizenshipNo": "Citizenship Number",
+      "photo":"Passport Photo",
+      "citizenship":"Citizenship Copy"
+    },
+    "gender": { "male": "Male", "female": "Female", "other": "Other" },
+    "terms": "I declare that the information provided is true.",
+    "prev": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Application submitted successfully!",
+    "error": "Submission failed!"
   }
 
 

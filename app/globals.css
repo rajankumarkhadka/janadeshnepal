@@ -50,3 +50,16 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;                /* Chrome, Safari */
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for iframe or other scrollable elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

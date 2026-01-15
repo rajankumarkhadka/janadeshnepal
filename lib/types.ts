@@ -23,3 +23,13 @@ export interface Blog {
   is_featured:boolean;
    
 }
+
+export type Manifesto = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  pdf_file: string;
+  status: string;
+  is_published: boolean;
+};

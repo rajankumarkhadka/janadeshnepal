@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Container from '../layout/Container';
 import { useEffect, useState } from 'react';
-
+import Link from 'next/link';
 const newsList = [
   'Janadesh party to hold special meeting on 15th Falgun',
   'Central committee meeting concludes in Kathmandu',
@@ -47,21 +47,40 @@ export default function Hero() {
                   डिजिटल पारदर्शिता र जनमुखी शासनको अभियान
                 </p>
 
-                <div className="flex items-center gap-4">
-                  <button
-                    className="sm:px-6 py-2 px-4 rounded-full border-white/60 border bg-green-600  hover:bg-green-800 text-white font-normal shadow-lg  transition duration-300"
-                  >
-                    <span className="relative z-10">Join Now</span>
-                  </button>
+<div className="flex items-center gap-4">
+  {/* Join Now → Registration Page */}
+  <Link href="/register">
+    <button className="sm:px-6 py-2 px-4 rounded-full border-white/60 border bg-green-600 hover:bg-green-800 text-white font-normal shadow-lg transition duration-300">
+      <span className="relative z-10">Join Now</span>
+    </button>
+  </Link>
 
-                  <button
-                    className="sm:px-6 py-2 px-4 rounded-full border-white/60 border bg-transparent  hover:bg-white/20 text-white font-normal shadow-lg  transition duration-300"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Download Manifesto
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-id="element-124"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>                    </span>
-                  </button>
-                </div>
+  {/* View Manifesto → Manifesto Page */}
+  <Link href="/manifesto">
+    <button className="sm:px-6 py-2 px-4 rounded-full border-white/60 border bg-transparent hover:bg-white/20 text-white font-normal shadow-lg transition duration-300">
+      <span className="relative z-10 flex items-center gap-2">
+        View Manifesto
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 15V3"></path>
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <path d="m7 10 5 5 5-5"></path>
+        </svg>
+      </span>
+    </button>
+  </Link>
+</div>
+
               </div>
               <div className="relative hidden  lg:flex justify-start lg:justify-end">
                 <div className="absolute lg:flex hidden  z-10 h-[480px] w-[450px] bg-[#00bf63] rounded-xl -top-[48px] right-0"></div>

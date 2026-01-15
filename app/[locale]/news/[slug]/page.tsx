@@ -28,12 +28,12 @@ export default async function BlogPage({ params }: BlogPageProps) {
     <div className="bg-gray-100 mt-[121px] py-10">
         <Container>
       
-      <div className="relative h-96 mb-6">
+      <div className="relative h-96 mb-6 rounded-3xl bg-[#b6b3b3]">
         <Image
-          src={blog.featured_image}
+          src={blog.featured_image || '/images/avatar-placeholder.png'}
           alt={locale === 'np' ? blog.title_np : blog.title_en}
           fill
-          className="object-cover object-top rounded-lg"
+          className="object-cover object-top rounded-lg text-gray-400"
         />
       </div>
       <div className="flex flex-col relative">

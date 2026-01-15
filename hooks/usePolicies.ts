@@ -17,3 +17,10 @@ export function usePolicies() {
     refetchOnWindowFocus: true,
   });
 }
+
+
+export async function fetchPolicyBySlug(slug: string) {
+  const res = await fetch(`${API_BASE}/policies/${slug}/`);
+  if (!res.ok) throw new Error('Policy not found');
+  return res.json();
+}

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "@tanstack/react-query": "^5.90.16",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
@@ -17,6 +19,7 @@
     "next-intl": "^2.22.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-pdf": "^7.1.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
