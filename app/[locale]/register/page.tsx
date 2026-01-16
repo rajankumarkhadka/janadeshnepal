@@ -366,7 +366,7 @@ const MembershipFormBasic = () => {
                         className="w-full px-4 py-3 border border-gray-300 bg-gray-300 text-black rounded-lg  outline-none"
                       >
                         <option value="">छान्नुहोस्</option>
-                        <option value="koshi">प्रदेश १</option>
+                        <option value="koshi">कोशी</option>
                         <option value="madhesh">मधेश प्रदेश</option>
                         <option value="bagmati">बागमती प्रदेश</option>
                         <option value="gandaki">गण्डकी प्रदेश</option>

@@ -63,7 +63,7 @@ export default function PartyLeadershipCards() {
         <div className="">
           {/* Header */}
           <h1 className="text-3xl font-semibold text-green-600 mb-10">
-            जनादेश पार्टीको नेतृत्व
+{locale === 'np' ? 'जनादेश पार्टीको नेतृत्व' : 'Leaders'}
           </h1>
         </div>
         <div className="flex gap-6 pb-12  overflow-x-auto 

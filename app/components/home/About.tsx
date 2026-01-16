@@ -2,8 +2,48 @@
 import Image from 'next/image';
 import Container from '../layout/Container';
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+
+type ImageItem = {
+  id: number;
+  image: string;
+  caption: string;
+};
+
+type AboutMovementItem = {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  images: ImageItem[];
+};
+
+type ApiResponse = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: AboutMovementItem[];
+};
+
+const fetchAboutMovement = async (): Promise<AboutMovementItem | null> => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE}/about-movement/`
+  );
+  if (!res.ok) throw new Error('Failed to fetch');
+  const data: ApiResponse = await res.json();
+  return data.results?.[0] ?? null;
+};
+
 export default function AboutMovement() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['about-movement'],
+    queryFn: fetchAboutMovement,
+  });
+
+  if (isLoading) return null;
+  if (isError || !data) return null;
+
+  // const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section className="bg-white py-12">
@@ -49,51 +89,47 @@ export default function AboutMovement() {
 </div>
 
 
-        <div className="">
-          <div className="">
-            <div className="flex justify-between items-center mb-10">
-              <h1 className="text-3xl font-semibold text-blue-600 ">
-                About Movement
-              </h1>
-              <button className="text-gray-400 hover:text-gray-600 font-medium">
-                View More
-              </button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+         <div>
+      <div className="flex justify-between items-center mb-10">
+        <h1 className="text-3xl font-semibold text-blue-600">
+          {data.title}
+        </h1>
+        <button className="text-gray-400 hover:text-gray-600 font-medium">
+          View More
+        </button>
+      </div>
 
-  {/* TEXT */}
-  <div className="md:col-span-1">
-    <p className="text-base text-gray-700 leading-relaxed">
-      The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
-    </p>
-    <br />
-    <p className="text-base text-gray-700 leading-relaxed">
-      The youths, who had been calling for demonstrations through social media in recent days, gathered at Maitighar this morning with placards and slogans.
-    </p>
-  </div>
-
-  {/* PHOTOS */}
-  <div className="md:col-span-2">
-    <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-2">
-      {timelineData.map((item) => (
-        <div
-          key={item.id}
-          className="flex-shrink-0 w-[260px] h-64 rounded-lg overflow-hidden transition hover:shadow-md"
-        >
-          <img
-            src={item.image}
-            alt={item.alt}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* TEXT */}
+        <div className="md:col-span-1">
+          <p className="text-base text-gray-700 leading-relaxed">
+            {data.subtitle}
+          </p>
+          <br />
+          <p className="text-base text-gray-700 leading-relaxed">
+            {data.description}
+          </p>
         </div>
-      ))}
-    </div>
-  </div>
 
-</div>
-
+        {/* PHOTOS */}
+        <div className="md:col-span-2">
+          <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-2">
+            {data.images.map((img) => (
+              <div
+                key={img.id}
+                className="flex-shrink-0 w-[260px] h-64 rounded-lg overflow-hidden transition hover:shadow-md"
+              >
+                <img
+                  src={img.image}
+                  alt={img.caption || 'About movement'}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+    </div>
       </Container>
     </section>
   );
